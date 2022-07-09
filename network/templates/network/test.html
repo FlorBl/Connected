@@ -1,0 +1,35 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<div class="mainA"><!-- Center Div -->     
+
+<!---->
+
+<div>
+    {% for user in followersList %}
+        <div class="profilePic">
+            <img class="picture"  src="{{ user.follower.profile_image.url }}">
+        </div>
+    <div class="card">
+        <div class="card-body">
+
+
+            <p class="card-title"><a href="{% url 'profile' user.follower %}"><strong>{{user.follower}}</strong> started following you</a></p>
+          
+
+        </div>
+        
+    </div>
+    {% empty %}
+    <h3 style="margin:5% 0% 10% 15%;">No Notifications <br>- yet.</h3>
+    {% endfor %}
+</div>
+</div>
+
+
+
+
+
+{% endblock %}
