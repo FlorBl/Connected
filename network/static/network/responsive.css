@@ -47,6 +47,10 @@
 
 
 @media only screen and (min-width: 1005px) {
+    body{
+        width:100vw;
+        height: 100vh;
+    }
     #forSmallerWidth{
         visibility: hidden;
     }
@@ -95,12 +99,6 @@ hide{
 
 
 
-@media only screen and (max-width: 1175px){
-    #MainDivIndex{
-    width: 75vw;
-}
-}
-
 @media only screen and (max-width: 575px){
     #MainDivIndex{
     width: 81vw;
@@ -122,11 +120,16 @@ hide{
 
 
 @media only screen and (max-width: 505px){
+
 .welcomeDiv{
+    width: 100vw;
     display: grid;  
-    grid-template-columns: 9vw 90vw 0vw;  
-    grid-template-rows: 100vh; 
+    grid-template-columns: 9vw 90vw;  
+    grid-template-rows: 100vh;
+     overflow-x: hidden;
 }
+
+
 .postIcons{
     margin-right: 1% !important;
 }
@@ -134,8 +137,7 @@ hide{
     border:1px solid red;
 }
     #MainDivIndex{
-    width: 91vw;
     border:1px solid red;
-    margin-left: 5%;
 }
 }
+
