@@ -160,9 +160,67 @@ overflow-x: hidden;
     visibility: hidden;
 }
 .mainA{
-    border:1px solid red;
     margin-left: 3% !important;
     
+}
+.leftSide > h4:hover{
+    background-color: unset;
+}
+#welcomebtnz{
+    visibility: hidden;
+}
+
+/* Pop Form when user clicks any where */
+#lightbox{
+    visibility:hidden;
+    border-radius: 20px;
+    color:white;
+    z-index:100;
+    height: fit-content;
+    width:80vw;
+    padding:20px;
+    background-color: white;
+
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#lightbox3{
+    visibility:hidden;
+    border-radius: 20px;
+    color:black;
+    z-index:100;
+    height: fit-content;
+    max-width:600px;
+    padding:50px 100px;
+    background-color: white;
+
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#lightbox2{
+    visibility:hidden;
+    border-radius: 20px;
+    color:white;
+    z-index:100;
+    height: fit-content;
+    width:80vw;
+    padding:20px;
+    background-color: white;
+
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+hide{
+    visibility: hidden;
 }
 }
 
