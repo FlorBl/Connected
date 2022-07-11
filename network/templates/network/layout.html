@@ -24,7 +24,7 @@
         {% if user.is_authenticated %}
                 <i id="globe" class="fas fa-globe-americas show"></i>
             <h4><a class="nav-link" href="{% url 'logout' %}"><i class="show m fas fa-sign-out-alt fa-sm"></i>Log out</a></h4>
-            <h4><a class="nav-link" href="{% url 'index' %}"><i  class="show m fas fa-home fa-sm"></i>Home</a></h4>
+            <h4><a class="nav-link" href="{% url 'index' %}"><i  class="show m fas fa-home fa-sm"></i><hide>Home</hide></a></h4>
              <h4><a class="nav-link" href="{% url 'test' %}"><i  class="show m far fa-bell fa-sm" ></i>Notifications</a></h4>   
              <h4 ><a class="nav-link" href="{% url 'profile' user.username %}"><i style="color:rgb(60,64,68);" class="show m far fa-user fa-sm"></i><span class="underline">Profile</span></a></h4>
             <h4 ><a class="nav-link" href="{% url 'profile' user.username %}"><i style="color:rgb(60,64,68);" class="show m fas fa-paper-plane fa-sm ab" style="backgound-color:rgb(15,154,251);"></i><span class="underline"></span></a></h4>

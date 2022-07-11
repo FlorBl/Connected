@@ -77,3 +77,21 @@
     }
     
 }
+
+
+/*_______________________________________*/
+@media only screen and (max-width: 1175px){
+    .smallerWidth{
+        border:1px solid rebeccapurple;
+    }
+.welcomeDiv{
+    display: grid;  
+    grid-template-columns: 15% 49% 26%;  
+    grid-template-rows: 100vh; 
+}
+
+hide{
+    visibility: hidden;
+}
+
+}

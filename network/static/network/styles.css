@@ -600,7 +600,6 @@ margin-top:2%;
 
 
 #followersJs, #profileEdit, #registerIndex, #loginIndex{
-    border:1px solid red;
     visibility: hidden;
     border-radius: 20px;
     color:black;
