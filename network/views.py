@@ -20,7 +20,7 @@ class NewPostForm(forms.Form):
     """The new form class
     """
     post_text = forms.Field(widget=forms.Textarea(
-        {'rows': '2','id':'textPost', 'maxlength': 160, 'class': 'form-control', 'placeholder': "What's happening?",'style': "resize:none;float:right;padding-top:20px;padding-left:70px;font-size:large;",}), label="New Post", required=True)
+        {'rows': '2','id':'textPost', 'maxlength': 160, 'class': 'form-control', 'placeholder': "What's on your mind?",'style': "resize:none;float:right;padding-top:20px;padding-left:70px;font-size:large;",}), label="New Post", required=True)
 
 
 class NewEditPostForm(forms.Form):
@@ -351,7 +351,7 @@ def register(request):
 
 
 # Testing
-def test(request):
+def notifications(request):
     is_following = 0
     if request.user.is_authenticated:
         user = request.session['_auth_user_id']

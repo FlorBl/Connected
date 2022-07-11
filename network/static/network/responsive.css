@@ -1,10 +1,6 @@
 @media only screen and (max-width: 1005px) {
 
 
-    .smallerWidth{
-        visibility: hidden;
-
-    }
     .show{
         visibility: visible;
         font-size: 150%;
@@ -13,7 +9,7 @@
     }
     .welcomeDiv{
     display: grid;  
-    grid-template-columns: 7vw 82vw 1vw;  
+    grid-template-columns: 27% 37% 26%;  
     grid-template-rows: 100vh;
 }
     #globe{
@@ -114,6 +110,10 @@ hide{
 }
 
 
+
+
+
+/* Index.html width < 505px */
 @media only screen and (max-width: 505px){
 
 body,html{
@@ -134,9 +134,7 @@ overflow-x: hidden;
 
 
 
-.leftSide{
-    border:1px solid yellow;
-}
+
     .show{
         visibility: visible;
         font-size: 150%;
@@ -144,11 +142,27 @@ overflow-x: hidden;
         left:0% !important;
     }
     #MainDivIndex{
-        margin-left: 5%;
+        margin-left: 3%;
         border-left: 1px solid lightgray;
     }
     .welcomeDiv > div{
    border-right: none;
+   margin-left: 0;
+
+}
+.postButton{
+    visibility: hidden;
+}
+.underline{
+    visibility: hidden;
+}
+.prof{
+    visibility: hidden;
+}
+.mainA{
+    border:1px solid red;
+    margin-left: 3% !important;
+    
 }
 }
 
