@@ -20,9 +20,7 @@
         font-size: x-large;
         margin-left: 8%;
     }
-    .postSide{
-        color:rgb(15,154,251);
-    }
+
     #homeTitle{
         width: 77vw;
         padding:5px;
@@ -50,7 +48,7 @@
     body{
         width:100vw;
     }
-    #forSmallerWidth{
+    #SmallerWidth{
         visibility: hidden;
     }
     #homeTitle{
@@ -86,9 +84,7 @@
 
 /*_______________________________________*/
 @media only screen and (max-width: 1175px){
-    .smallerWidth{
-        border:1px solid rebeccapurple;
-    }
+
 
 hide{
     visibility: hidden;
@@ -135,11 +131,24 @@ overflow-x: hidden;
 .postIcons{
     margin-right: 1% !important;
 }
-.firstDiv{
-    border:1px solid red;
+
+
+
+.leftSide{
+    border:1px solid yellow;
 }
+    .show{
+        visibility: visible;
+        font-size: 150%;
+        color:rgb(60,64,68);
+        left:0% !important;
+    }
     #MainDivIndex{
-    border:1px solid red;
+        margin-left: 5%;
+        border-left: 1px solid lightgray;
+    }
+    .welcomeDiv > div{
+   border-right: none;
 }
 }
 

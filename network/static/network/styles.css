@@ -217,14 +217,12 @@ a {
 .welcomeDiv{
     overflow-x: hidden;
     width: 100vw;
-    border:2px solid green;
     display: grid;  
     grid-template-columns: 27% 37% 26%;  
     grid-template-rows: 100vh; 
 }
 
 .welcomeDiv > div{
-    border:1px solid red;
    border-right: 1px solid lightgray;
 }
 .firstDiv{
