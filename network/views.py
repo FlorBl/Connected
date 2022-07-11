@@ -112,7 +112,7 @@ def index(request):
         'posts': page_obj,
         'form': NewPostForm(),
         'form_edit': NewEditPostForm(),
-        'suggestionList': random.choices(suggestionList, 3),
+        'suggestionList': random.sample(suggestionList, 3),
         "is_following": is_following
     })
 
