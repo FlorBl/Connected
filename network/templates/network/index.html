@@ -3,7 +3,7 @@
 
 {% block body %}
 
-<div>
+<div id="MainDivIndex">
 <h5 id="homeTitle" style="position:fixed;margin-bottom:5%;">Home</h5>
             {% include "network/post_form.html" %}
 
@@ -43,7 +43,7 @@
                         <p class="card-text">
 
                             <div style="margin-right:7%;" data-id="{{post.id}}"
-                                class="card-link {% if post.current_like > 0 %} fas {%else%} far {% endif %} fa-heart">&nbsp<small
+                                class="card-link  {% if post.current_like > 0 %} fas {%else%} far {% endif %} fa-heart">&nbsp<small
                                 class="text-muted">{{post.like_set.count}}</small>
                             </div>
 

@@ -1,5 +1,6 @@
 @media only screen and (max-width: 1005px) {
 
+
     .smallerWidth{
         visibility: hidden;
 
@@ -12,7 +13,7 @@
     }
     .welcomeDiv{
     display: grid;  
-    grid-template-columns: 12vw 77vw 1vw;  
+    grid-template-columns: 7vw 82vw 1vw;  
     grid-template-rows: 100vh;
 }
     #globe{
@@ -41,6 +42,7 @@
     .m{
         all:initial;
     }
+
 }
 
 
@@ -84,14 +86,56 @@
     .smallerWidth{
         border:1px solid rebeccapurple;
     }
-.welcomeDiv{
-    display: grid;  
-    grid-template-columns: 15% 49% 26%;  
-    grid-template-rows: 100vh; 
-}
 
 hide{
     visibility: hidden;
 }
 
+}
+
+
+
+@media only screen and (max-width: 1175px){
+    #MainDivIndex{
+    width: 75vw;
+}
+}
+
+@media only screen and (max-width: 575px){
+    #MainDivIndex{
+    width: 81vw;
+}
+
+}
+
+@media only screen and (max-width: 536px){
+.postIcons{
+    margin-right: 4% !important;
+}
+}
+
+@media only screen and (max-width: 517px){
+.postIcons{
+    margin-right: 2% !important;
+}
+}
+
+
+@media only screen and (max-width: 505px){
+.welcomeDiv{
+    display: grid;  
+    grid-template-columns: 9vw 90vw 0vw;  
+    grid-template-rows: 100vh; 
+}
+.postIcons{
+    margin-right: 1% !important;
+}
+.firstDiv{
+    border:1px solid red;
+}
+    #MainDivIndex{
+    width: 91vw;
+    border:1px solid red;
+    margin-left: 5%;
+}
 }
