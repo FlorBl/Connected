@@ -9,7 +9,7 @@ function register(){
     dimmer = document.createElement("div");
     
     dimmer.style.width =  window.innerWidth + 'px';
-    dimmer.style.height = window.innerHeight + 'px';
+    dimmer.style.height = '100%';
     dimmer.className = 'dimmer';
     
     dimmer.onclick = function(){
@@ -43,7 +43,7 @@ function login(){
     dimmer = document.createElement("div");
     
     dimmer.style.width =  window.innerWidth + 'px';
-    dimmer.style.height = window.innerHeight + 'px';
+    dimmer.style.height = '100%';
     dimmer.className = 'dimmer';
     
     dimmer.onclick = function(){
@@ -75,7 +75,7 @@ function popup(){
     dimmer = document.createElement("div");
     
     dimmer.style.width =  window.innerWidth + 'px';
-    dimmer.style.height = window.innerHeight + 'px';
+    dimmer.style.height = '100%';
     dimmer.className = 'dimmer';
     
     dimmer.onclick = function(){
@@ -102,9 +102,9 @@ function settings(){
     dimmer = document.createElement("div");
     
     dimmer.style.width =  window.innerWidth + 'px';
-    dimmer.style.height = window.innerHeight + 'px';
+    dimmer.style.height = '100%';
     dimmer.className = 'dimmer';
-    
+
     dimmer.onclick = function(){
         document.body.removeChild(this);   
         lightbox.style.visibility = 'hidden';

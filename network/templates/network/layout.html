@@ -219,11 +219,10 @@
         <i id="closeX3" class="fas fa-times" style="margin-left:15px;"></i>
         <h5 style="-ms-flex: 1;flex:1; margin:5px 15px 30px 40px;">Edit Profile</h5>
 
-        
 </div><!-- Center Div --> 
 <!-- Uploading Cover Picture-->
-<div>
-    <div class="main">
+<div id="EditMyProfile">
+    <div class="SaveProfileEdit">
             <div class="cover">
                 <form id="formID" action="{% url 'updateInfo' %}" method="post" class="card-body" enctype="multipart/form-data">
                  {% csrf_token %}
@@ -263,7 +262,8 @@
         <input id="saveButton" class="welcomeBtn btnA" type="submit" value="Save" style="background-color:rgb(15,20,25);margin:15px;">
 
     </form>
-
+</div>
+</div>
 </div>
 
 </body>

@@ -9,7 +9,6 @@
 
 var username = document.getElementById('username').value;
 var email = document.getElementById('email').value;
-
 var picture = document.getElementById('file-upload').value;
 
 
