@@ -222,10 +222,7 @@ overflow-x: hidden;
 hide{
     visibility: hidden;
 }
-#profileEdit{
-    left:20;
-    right: 20;
-    border:4px solid greenyellow;
-}
+
+
 }
 
