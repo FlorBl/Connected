@@ -626,9 +626,8 @@ margin-top:2%;
 }
 
 #profileEdit{
-    border:3px solid pink;
     min-width: 40vw;
-    min-height:88vh;
+    min-height:60vh;
     position: absolute;
 
 }

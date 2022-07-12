@@ -227,11 +227,13 @@
                 <form id="formID" action="{% url 'updateInfo' %}" method="post" class="card-body" enctype="multipart/form-data">
                  {% csrf_token %}
                 <img onclick="document.getElementById('file-uploadC').click()" src="{{ user_profile.cover_image.url }}" />
-                <i class="fas fa-camera centered" style="font-size:large;padding:10px;border-radius:50px;background-color:rgb(56,45,39);color:rgb(188,182,180);">
+                <i onclick="document.getElementById('file-uploadC').click()" class="fas fa-camera centeredd" style="font-size:large;padding:10px;border-radius:50px;background-color:rgb(56,45,39);color:rgb(188,182,180);">
                 </i>
             </div>
 
             <div class="profile">
+                    <i  onclick="document.getElementById('file-uploadB').click()" class="fas fa-camera centeredd" style="font-size:large;padding:10px;border-radius:50px;background-color:rgb(56,45,39);color:rgb(188,182,180);">
+                </i>
                     <img onclick="document.getElementById('file-uploadB').click()" src="{{ user_profile.profile_image.url }}">
             </div>  
             
