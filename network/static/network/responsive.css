@@ -227,11 +227,9 @@ hide{
     width: 90vw;
 }
 .cover{
-    border:2px solid red;
     position: relative;
 }
 .profile{
-    border:2px solid gold;
     position: relative;
 }
 .centeredd{
