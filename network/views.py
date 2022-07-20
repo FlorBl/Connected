@@ -280,6 +280,7 @@ def profile(request, username):
     paginator = Paginator(posts, MAX_POSTS_PER_PAGE)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+    print(f"Hello, {profile_user.cover_image.url} ")
     return render(request, "network/profile.html", { "followersList": followersList,
     "followingList": followingList,
      "user_profile": profile_user, 
