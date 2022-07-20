@@ -12,7 +12,7 @@
 
         <div class="profile">
             <img id="ProfileImage" src="{{ user_profile.profile_image.url }}">
-        </div>  
+        </div>
 
     </div> <!-- Background Image -->
 
@@ -109,11 +109,16 @@
     {% endfor %}
 </div>
 
+<div id="popPostForm">
 
+   <i id="x22" class="fas fa-times"></i><div id="outer">
+    <i id="singupIcon" class="fas fa-globe-americas"></i>
+</div>
+                {% include "network/post_form.html" %}
+</div>
 
 
 </div> <!-- Center Div ends Here-->
-
 
 
 

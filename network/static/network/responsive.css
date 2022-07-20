@@ -1,50 +1,86 @@
-
 #separatortwo {
     margin-top: 130px;
-    border:2px solid red;
 }
-@media only screen and (max-width: 1005px) {
+#popPostForm{
 
-    .show{
-        visibility: visible;
-        font-size: 150%;
-        color:rgb(60,64,68);
-        padding-right:15%;
-    }
-    .welcomeDiv{
-    display: grid;  
-    grid-template-columns: 27% 37% 26%;  
-    grid-template-rows: 100vh;
+        visibility:hidden;
+    border-radius: 20px;
+    color:white;
+    z-index:100;
+    height: fit-content;
+    width:80vw;
+    padding:20px;
+    background-color: white;
+
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
-    #globe{
-        font-size: x-large;
-        margin-left: 8%;
-    }
 
-    #homeTitle{
-        width: 77vw;
-        padding:5px;
-        position:relative;
-        backdrop-filter: blur(16px);
-        z-index: 1000;
-        position:fixed;
+#profileEdit{
+    height: 68vh;
+    width: 90vw;
+}
+.cover{
+    position: relative;
+}
+.profile{
+    position: relative;
+}
+.centeredd{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
 
-    }
-    .ab{
-        visibility: visible;
+@media only screen and (max-width: 1420px) {
+    .leftSide{
+        width: 20%;
     }
     .prof{
-       left:5;
-       bottom:0;
-    }
-    .m{
-        all:initial;
+        visibility: hidden;
     }
 
+    
+}
+
+@media only screen and (max-width: 1150px) {
+hide{
+    visibility: hidden;
+}
+.leftSide h4{
+    max-width: 15%;
+}
+    .welcomeDiv{
+    width: 100vw;
+    display: grid;  
+    grid-template-columns: 10vw 55vw 35vw !important;  
+    grid-template-rows: 100vh;
+     overflow-x: hidden;
+}
+.prof{
+    visibility: hidden;
+}
+.underline{
+    visibility: hidden;
+}
+
+.postSide{
+    visibility: hidden;
+}
+.articleTop{
+    max-width: 32vw;
+}
+.searchArticle{
+    visibility: hidden;
+}
 }
 
 
-@media only screen and (min-width: 1005px) {
+@media only screen and (max-width: 1005px) {
     body{
         width:100vw;
     }
@@ -78,6 +114,9 @@
         margin:0 auto;
 
     }
+    .rightDiv2{
+        visibility: hidden;
+    }
     
 }
 
@@ -86,9 +125,7 @@
 @media only screen and (max-width: 1175px){
 
 
-hide{
-    visibility: hidden;
-}
+
 
 }
 
@@ -122,18 +159,35 @@ hide{
     grid-template-rows: 100vh;
      overflow-x: hidden;
 }
+
+.firstDiv{
+    margin-left: 2vw;
 }
+
+
+}
+
+/* Hide plane icon after 1150 */
+@media only screen and (min-width: 1150px){
+.fa-paper-plane{
+    visibility: hidden;
+}
+
+}
+
+
 
 
 /* Index.html width < 1000px */
 @media only screen and (max-width: 1000px){
+
 .searchArticle{
     visibility: hidden;
 }
 .welcomeDiv{
     width: 100vw;
     display: grid;  
-    grid-template-columns: 6vw 65vw 20vw;  
+    grid-template-columns: 5vw 65vw 30vw;  
     grid-template-rows: 100vh;
      overflow-x: hidden;
 }
@@ -151,9 +205,7 @@ hide{
 
 
 
-
-
-/* Index.html width < 600px */
+/* Index.html width < 700px */
 @media only screen and (max-width: 700px){
 
 body,html{
@@ -162,7 +214,7 @@ overflow-x: hidden;
 .welcomeDiv{
     width: 100vw;
     display: grid;  
-    grid-template-columns: 9vw 90vw;  
+    grid-template-columns: 9vw 90vw 1vw !important;  
     grid-template-rows: 100vh;
      overflow-x: hidden;
 }
@@ -200,9 +252,9 @@ overflow-x: hidden;
     visibility: hidden;
 }
 .mainA{
-    margin-left: 3% !important;
-    
+    margin-left: 3% !important;    
 }
+
 .leftSide > h4:hover{
     background-color: unset;
 }
