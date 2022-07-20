@@ -108,14 +108,13 @@ hide{
         width: 0%;
     }
     #rightWelcomeDiv{
-        visibility: visible;
-        width: 100vw;
-        height: 100vh;
-        margin:0 auto;
+        max-height: 100vh;
 
     }
+
     .rightDiv2{
         visibility: hidden;
+        
     }
     
 }
@@ -217,6 +216,21 @@ overflow-x: hidden;
     grid-template-columns: 9vw 90vw 1vw !important;  
     grid-template-rows: 100vh;
      overflow-x: hidden;
+}
+
+#options h1{
+    visibility: hidden;
+    margin-bottom: 0px;
+
+}
+#options h2{
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+.fa-globe-americas{
+    font-size: 40px;
+    margin-bottom: 10px;
+
 }
 
 
