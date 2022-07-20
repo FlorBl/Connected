@@ -109,12 +109,48 @@ hide{
 }
 }
 
+/* Index.html width < 1200px */
+@media only screen and (max-width: 1200px){
+    .welcomeDiv{
+    width: 100vw;
+    display: grid;  
+    grid-template-columns: 20vw 45vw 35vw;  
+    grid-template-rows: 100vh;
+     overflow-x: hidden;
+}
+}
+
+
+/* Index.html width < 1000px */
+@media only screen and (max-width: 1000px){
+.searchArticle{
+    visibility: hidden;
+}
+.welcomeDiv{
+    width: 100vw;
+    display: grid;  
+    grid-template-columns: 6vw 65vw 20vw;  
+    grid-template-rows: 100vh;
+     overflow-x: hidden;
+}
+.postSide{
+    visibility: hidden;
+}
+.underline{
+    visibility: hidden;
+}
+.prof{
+    visibility: hidden;
+}
+
+}
 
 
 
 
-/* Index.html width < 505px */
-@media only screen and (max-width: 505px){
+
+/* Index.html width < 600px */
+@media only screen and (max-width: 700px){
 
 body,html{
 overflow-x: hidden;
