@@ -4,11 +4,14 @@
 {% block body %}
 
 <div id="MainDivIndex">
+    <div id="separatorone">
 <h5 id="homeTitle" style="position:fixed;margin-bottom:5%;">Home</h5>
             {% include "network/post_form.html" %}
-
+    </div>
+    <br>
+    <div id="separatortwo">
             {% for post in posts %}
-            <div>
+            <div id="cardAndProfile">
                 <div class="profilePic">
                     <img class="picture" src="{{ post.user.profile_image.url }}">
                 </div>
@@ -71,6 +74,7 @@
                     <h5 class="noPosts">No posts</h5>
                     {% endfor %}
     </div>
+</div>
 
 <script src="{% static 'network/welcome.js' %}"></script>
 {% load static %}

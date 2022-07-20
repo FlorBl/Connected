@@ -1,5 +1,7 @@
-#MainDivIndex, #postformuser{
-    border:1px solid red;
+
+#separatortwo {
+    margin-top: 130px;
+    border:2px solid red;
 }
 @media only screen and (max-width: 1005px) {
 
