@@ -1,8 +1,10 @@
+blue{
+    color:rgb(15,154,251);
+}
 #separatortwo {
     margin-top: 130px;
 }
 #popPostForm{
-
         visibility:hidden;
     border-radius: 20px;
     color:white;
@@ -103,6 +105,7 @@ hide{
 }
 
 @media only screen and (max-width: 800px) {
+
     #leftWelcomeDiv{
         visibility: hidden;
         width: 0%;
@@ -116,7 +119,16 @@ hide{
         visibility: hidden;
         
     }
+
+    .welcomeDiv{
+    width: 100vw;
+    display: grid;  
+    grid-template-columns: 9vw 90vw 1vw !important;  
+    grid-template-rows: 100vh;
+     overflow-x: hidden;
+}
     
+
 }
 
 
@@ -346,3 +358,45 @@ hide{
 }
 }
 
+
+
+@media only screen and (max-width: 450px){
+
+
+#options h1{
+    visibility: hidden;
+    margin-bottom: 0px;
+
+}
+#options h2{
+    border:1px solid white;
+    font-weight: bolder;
+    margin-top: -50px;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.smallerPX{
+    text-align:center;
+    max-width:90% !important;
+}
+
+.welcomeBtn{
+    font-size:medium;
+    text-align: center;
+    max-width: 70%;
+    border:0.5px solid#D8D8D8;
+    padding: 5px 15px;
+    margin: 0 auto;
+    margin-top: 20px;
+
+}
+#first{
+    margin-top:40px;
+}
+.fa-globe-americas{
+    font-size: 40px;
+    margin-bottom: 0px;
+
+}
+}
