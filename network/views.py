@@ -418,6 +418,7 @@ def updateInfo(request):
         updateUser = User.objects.get(id=id)
         
         newCover = request.FILES['cover'] if 'cover' in request.FILES else False
+        newImage = request.FILES['image'] if 'image' in request.FILES else False
         
         newBio = request.POST["bio"]
         
@@ -429,6 +430,12 @@ def updateInfo(request):
         
         if newCover:
             updateUser.cover_image = newCover
+            updateUser.save()
+        else:
+            pass
+        
+        if newImage:
+            updateUser.profile_image = newImage
             updateUser.save()
         else:
             pass

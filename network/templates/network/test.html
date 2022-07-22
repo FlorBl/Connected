@@ -24,12 +24,22 @@
     </div>
     {% empty %}
     <h3 style="margin:5% 0% 10% 15%;">No Notifications <br>- yet.</h3>
+
+
     {% endfor %}
 </div>
 </div>
 
 
+<div>
+<label onclick="document.getElementById('imagePreview').click();">
+    Image Preview
+</label>
+<img id="blah" alt="your image" width="100" height="100" />
 
+<input id="imagePreview" type="file" 
+    onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+</div>
 
 
 
