@@ -80,47 +80,48 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.querySelector('#sp_followers').innerHTML = data.total_followers;
                     if (data.result == "follow") {
                         this.innerHTML = "Following";
-                        this.className = "btn btn-primary";
-                                        this.innerHTML = "Following";
-                        this.className = 'followingButton';
-                        this.style.backgroundColor = '#fff';
-                        this.style.color = '#1a8cd8';
-                        this.style.position = 'absolute';
-                        this.style.top = '0';
-                        this.style.right = '0';
-                        this.style.display = 'block';
-                        this.style.fontSize = 'medium';
-                        this.style.fontWeight = 'bold';
-                        this.style.textAlign = 'center';
-                        this.style.borderRadius = '20px';
-                        this.style.border = '0.5px solid #D8D8D8';
-                        this.style.padding = '5px 15px';
-                        this.style.marginRight = '5%';
-                        this.style.marginTop = '2%';
+                        this.className = 'following';
 
                     } else {
                         this.innerHTML = "Follow";
-                        this.className = "btn btn-outline-primary";
+
                     }
                 });
 
         })
 
+
+
         //Displays the Unfollow text on the Following button when passing the mouser.
         document.querySelector('#btnfollow').addEventListener("mouseover", function (event) {
-            if (this.className == "followingButton") {
+            if (this.className == "following") {
                 this.innerHTML = "Unfollow";
             }
         });
 
         //Displays the text "Following" on the Following button when removing the mouser.
         document.querySelector('#btnfollow').addEventListener("mouseleave", function (event) {
-            if (this.className == "followingButton") {
+            if (this.className == "following") {
                 this.innerHTML = "Following"
             }
         });
 
+
+        //Displays the text "Following" on the Following button when removing the mouser.
+        document.querySelector('#btnfollow').addEventListener("click", function (event) {
+            if (this.className == "following") {
+                this.innerHTML = "Follow"
+                this.className = "followBtn";
+            }
+            else{
+                this.innerHTML = 'Following';
+                this.className = "following";
+            }
+        });
+
     }
+
+    
     //It receives an element and makes the asynchronous call of the like method.
     async function likeDislike(element) {
         await fetch(`/like/${element.dataset.id}`)
@@ -173,3 +174,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 });
+
+

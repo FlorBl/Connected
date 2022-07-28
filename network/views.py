@@ -229,19 +229,17 @@ def profile(request, username):
         logged_user = request.session['_auth_user_id']
         followers = Follower.objects.filter(follower=logged_user)
         username = User.objects.get(id=logged_user)
-        is_following = Follower.objects.filter(
-        follower=logged_user, following=profile_user).count()
+        is_followingg = Follower.objects.filter(
+        follower=logged_user, following=profile_user.id).count()
+        print(logged_user)
+        print(profile_user)
+        print(f'This isssssssssssssssss {is_followingg}')
         likes = Like.objects.filter(post=OuterRef('id'), user_id=logged_user)
         posts = Post.objects.filter(user=profile_user).order_by(
             'post_date').annotate(current_like=Count(likes.values('id')))
-        ola = profile_user.profile_image.url
         
         
-        postz = Post.objects.filter(user_id__in=followers.values('following_id')).order_by(
-        '-post_date').annotate(current_like=Count(likes.values('id')))
-        '''
-        '''
-                #List of who the current user follows:
+        #List of who the current user follows:
         currentUser = Follower.objects.filter(follower_id=logged_user)
 
         #Create an empty list with then copy the results
@@ -285,7 +283,7 @@ def profile(request, username):
     "followingList": followingList,
      "user_profile": profile_user, 
      "posts": page_obj, 
-     "is_following": is_following, 
+     "is_following": is_followingg, 
      'total_following': total_following, 
      'total_followers': total_followers,
      "username":username,
@@ -463,5 +461,7 @@ def testing(request):
         usernames.append(i.username)
     
 
-    return render(request, 'network/testing.html',{'tes':usernames})
+    return render(request, 'network/testing.html',{'FOLLOWERZ':usernames})
+
+
 

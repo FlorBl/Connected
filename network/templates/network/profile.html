@@ -43,10 +43,11 @@
 
         {% if user.is_authenticated and user.id != user_profile.id %}
         <p class="card-text">
+
         {% if is_following > 0 %}
-            <button id="btnfollow" data-id="{{user_profile.id}}" type="button" class="followBtn">Following</button>
+            <button id="btnfollow" data-id="{{user_profile.id}}" type="button" class="following">Following</button>
         {% else %}
-            <button id="btnfollow" data-id="{{user_profile.id}}" type="button" class="followBtn" style="background-color:rgb(15,20,25);">Follow</button>
+            <button id="btnfollow" data-id="{{user_profile.id}}" type="button" class="followBtn">Follow</button>
         {%endif%}
         </p>
         {%endif%}
@@ -84,8 +85,9 @@
 
             <p class="card-text postDate"><small class="text-muted">{{post.post_date}}</small></p>
             <p class="card-text">
+            <div class="iconz">
                 <div data-id="{{post.id}}"
-                    class="card-link heartIcon {% if post.current_like > 0 %} fas {%else%} far {% endif %} fa-heart">&nbsp<small
+                    class="postIcons card-link heartIcon {% if post.current_like > 0 %} fas {%else%} far {% endif %} fa-heart">&nbsp<small
                     class="text-muted">{{post.like_set.count}}</small>
                 </div>
                 <div data-id="{{post.id}}"
@@ -100,6 +102,7 @@
                     class="postIcons card-link fas fa-external-link-alt">&nbsp<small
                     class="text-muted">0</small>
                 </div>
+            </div>
             </p>
         </div>
     </div>

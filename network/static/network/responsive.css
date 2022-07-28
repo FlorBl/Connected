@@ -1,3 +1,33 @@
+div.iconz{
+    display:table;
+    width:100%;
+}
+
+div.iconz div{
+    display:table-cell;
+    text-align:center;
+}
+
+
+
+/* index.html */
+#homeTitle{
+    border:1px solid red;
+    height: 5%;
+    backdrop-filter: blur(16px);
+    z-index: 1000;
+    position:fixed;
+    padding:5px;
+    width:max-content;
+    display: block;
+
+}
+
+
+#globe2{
+    visibility: hidden;
+
+}
 blue{
     color:rgb(15,154,251);
 }
@@ -21,16 +51,6 @@ blue{
     transform: translate(-50%, -50%);
 }
 
-    #homeTitle{
-        width: 100%;
-        position:relative;
-        backdrop-filter: blur(16px);
-        z-index: 1000;
-        position:fixed;
-        padding:5px;
-        margin-bottom: 10%;
-
-    }
 
 #profileEdit{
     height: 68vh;
@@ -223,6 +243,14 @@ hide{
 
 body,html{
 overflow-x: hidden;
+}
+
+#globe2{
+    font-size: larger;
+    color:rgb(15,154,251) ;
+}
+#globe{
+    visibility: hidden;
 }
 .welcomeDiv{
     width: 100vw;

@@ -3,9 +3,11 @@ body {
 }
 
 a:hover { color: inherit; } 
+
 .fa-heart{
     color: red !important;
     cursor: pointer;
+    margin-right: 5%;
 }
 .btn-primary:hover{
     color: #fff;
@@ -179,6 +181,7 @@ a {
     color:rgb(15,154,251) ;
     margin-top: 20px;
 }
+
 #registerBtn{
     margin-top: 40px !important;
     min-width: 100%;
@@ -466,11 +469,20 @@ margin-top:2%;
 }
 
 .following{
-    color:#1a8cd8;
-    background-color: #fff;
-}
-#following:hover{
-    background-color:rgb(245,245,245);
+position: absolute;
+top:0;
+right:0;
+display: block;
+font-size:medium;
+font-weight: bold;
+text-align: center;
+border-radius: 20px;
+border:0.5px solid#D8D8D8;
+background-color: white;
+color:#1a8cd8;
+padding: 5px 15px;
+margin-right: 5%;
+margin-top:2%;
 }
 
 
@@ -484,9 +496,7 @@ margin-top:2%;
     color: gray;
 }
 
-.heartIcon{
-    margin-right:7%; 
-}
+
 .noPosts{
     padding-left:5%;
     border-top:1px solid lightgray;
@@ -685,7 +695,7 @@ margin-top:2%;
 }
 
 
-/* index.html */
+
 .postSide{
     outline:0;
 }

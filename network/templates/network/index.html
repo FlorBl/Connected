@@ -4,8 +4,9 @@
 {% block body %}
 
 <div id="MainDivIndex">
+<h5 id="homeTitle">Home </h5>
+
     <div id="separatorone">
-<h5 id="homeTitle" style="position:fixed;margin-bottom:5%;">Home</h5>
             {% include "network/post_form.html" %}
     </div>
     <br>
@@ -47,9 +48,9 @@
 
                         <p class="card-text postDate"><small class="text-muted">{{post.post_date}}</small></p>
                         <p class="card-text">
-
-                            <div style="margin-right:7%;" data-id="{{post.id}}"
-                                class="card-link  {% if post.current_like > 0 %} fas {%else%} far {% endif %} fa-heart">&nbsp<small
+                            <div class="iconz">
+                            <div  data-id="{{post.id}}"
+                                class="card-link  postIcons {% if post.current_like > 0 %} fas {%else%} far {% endif %} fa-heart">&nbsp<small
                                 class="text-muted">{{post.like_set.count}}</small>
                             </div>
 
@@ -67,6 +68,7 @@
                                 class="postIcons card-link fas fa-external-link-alt">&nbsp<small
                                 class="text-muted">0</small>
                             </div>
+                        </div>
                         </p>
 
                     </div>
