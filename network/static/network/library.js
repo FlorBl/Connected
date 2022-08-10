@@ -76,17 +76,27 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('#btnfollow').addEventListener("click", function (event) {
             fetch(`/follow/${this.dataset.id}`)
                 .then(response => response.json())
-                .then(data => {
+                .then(data => { 
                     document.querySelector('#sp_followers').innerHTML = data.total_followers;
                     if (data.result == "follow") {
                         this.innerHTML = "Following";
                         this.className = 'following';
 
+
+
+                    let updateFollowingList = document.getElementById('content');
+                    let html = f`<div class="profilePic"><img id="followingProfile" class="picture"  src="${data.user_profile}"></div>`;
+                    updateFollowingList.insertAdjacentHTML("beforeend", html);
+
+
+
                     } else {
                         this.innerHTML = "Follow";
+                        document.getElementById('userfollowingg').innerHTML = `unfollowed ${data.followinguser}`;
+
 
                     }
-                });
+               });
 
         })
 

@@ -1,7 +1,7 @@
 // Register Form Popup
 function showFollowing(){
 
-    var lightbox = document.getElementById('followingJs');
+    var lightbox = document.getElementById('followingJs'); // in layout.html
 
     lightbox.style.visibility = 'hidden';
 
@@ -59,3 +59,5 @@ function showFollowers(){
     lightbox.style.visibility = 'visible';
     return false;
 }
+
+

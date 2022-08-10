@@ -17,7 +17,9 @@ urlpatterns = [
     path("follow/<int:id>", views.follow, name="follow"),
     path("editpost/<int:id>", views.editpost, name="editpost"),
     path("notifications", views.notifications, name="notifications"),
-    path("updateInfo", views.updateInfo, name="updateInfo")
+    path("updateInfo", views.updateInfo, name="updateInfo"),
+    path("jsonresponse/<str:username>", views.jsonresponse, name="jsonresponse")
+    
 
 ]
 

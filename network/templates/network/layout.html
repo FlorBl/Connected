@@ -101,7 +101,7 @@
                         <span class="middle"><strong>{{i}}</strong><br> <p style="padding-left:8px;">@{{i}}</p></span>
                         <span>
 
-                            <button id="btnSuggestions" data-id="{{i.id}}" type="button"  style="background-color:rgb(15,20,25);float:right;color:whitesmoke;font-weight:bold;padding:3px 15px;border-radius:50px;">Follow</button>
+                            <button onclick="callThis();" id="btnSuggestions" data-id="{{i.id}}" type="button"  style="background-color:rgb(15,20,25);float:right;color:whitesmoke;font-weight:bold;padding:3px 15px;border-radius:50px;">Follow</button>
                             
                         </span>
                     </div>
@@ -109,6 +109,10 @@
 
             </article>
             {% endif %}
+
+
+
+
         </article>
 </div>
     </div>
@@ -154,28 +158,8 @@
 <div id="followingJs">
    <i id="closeX" class="fas fa-times"></i>
 
-<div id="content">
-    {% for user in followingList %}
-        <div class="profilePic">
-            <img class="picture"  src="{{ user.following.profile_image.url }}">
-        </div>
-    <div class="card">
-        <div class="card-body">
+<div id="content1">
 
-
-            <h5 class="card-title"><a href="{% url 'profile' user.following %}">{{user.following}}</a> <i class="fas fa-check-circle"></i></h5>
-            
-
-            <p class="card-text">
-                <div style="margin-right:7%;" class="card-link">&nbsp<small class="text-muted">Bio</small>
-                </div>
-
-            </p>
-        </div>
-    </div>
-    {% empty %}
-    <h2>Not following anyone yet..</h2>
-    {% endfor %}
 </div>
 </div>
 <!---->
@@ -198,9 +182,7 @@
             <h5 class="card-title"><a href="{% url 'profile' user.follower %}">{{user.follower}}</a> <i class="fas fa-check-circle"></i></h5>
           
             <p class="card-text">
-                <div style="margin-right:7%;" 
-                    class="card-link">&nbsp<small
-                    class="text-muted">Bio</small>
+                <div style="margin-right:7%;" class="card-link">&nbsp<small class="text-muted">Bio</small>
                 </div>
 
             </p>
@@ -286,6 +268,7 @@ onchange="document.getElementById('previewCover').src = window.URL.createObjectU
 <script src="{% static 'network/welcome.js' %}"></script>
 <script src="{% static 'network/mobile.js' %}"></script>
 <script src="{% static 'network/profile.js' %}"></script>
+<script src="{% static 'network/testing.js' %}"></script>
 
 
 <script src="https://kit.fontawesome.com/cbf89bcdb7.js" crossorigin="anonymous"></script>

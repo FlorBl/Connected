@@ -27,7 +27,7 @@ class Follower(models.Model):
         unique_together = (('follower', 'following'),)
     def __str__(self):
             return f"{self.follower} : {self.following}"
-
+    
 
 class Like(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, default=None)

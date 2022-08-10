@@ -7,12 +7,14 @@
     <!-- define required variables in template -->
     <script>
     var ALL_USERNAMES = {{ TESTING | safe }};
-    var EMAILS = {{ EMAILS | safe }}
+    var EMAILS = {{ EMAILS | safe }};
+    
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <script src="{% static 'network/welcomeA.js' %}"></script>
+    <script src="{% static 'network/testing.js' %}"></script>
     <script src="{% static 'network/WelcomePageVerification.js' %}"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"

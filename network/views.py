@@ -1,3 +1,4 @@
+from tabnanny import check
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse, HttpResponseBadRequest
@@ -8,9 +9,11 @@ from django import forms
 from django.db.models import OuterRef, Subquery, Count, Exists
 from django.views.generic import ListView
 from django.core.paginator import Paginator
+from django.core import serializers
 import time
 import random
 import json
+from django.forms.models import model_to_dict
 
 
 MAX_POSTS_PER_PAGE = 10
@@ -186,15 +189,19 @@ def follow(request, id):
         user_follower = User.objects.get(id=id)
         follower = Follower.objects.get_or_create(
             follower=user, following=user_follower)
+        
+        followinguser = str(user_follower)
+        user_profile = str(user_follower.profile_image.url)
+        bio = str(user_follower.bio)
+        
         if not follower[1]:
-            Follower.objects.filter(
-                follower=user, following=user_follower).delete()
+            Follower.objects.filter(follower=user, following=user_follower).delete()
             result = 'unfollow'
-        total_followers = Follower.objects.filter(
-            following=user_follower).count()
+        total_followers = Follower.objects.filter(following=user_follower).count()
+
     except KeyError:
         return HttpResponseBadRequest("Bad Request: no like chosen")
-    return JsonResponse({"result": result, "total_followers": total_followers})
+    return JsonResponse({"result": result, "total_followers": total_followers, "followinguser": followinguser, "user_profile": user_profile,"bio":bio})
 
 
 def like(request, id):
@@ -231,9 +238,7 @@ def profile(request, username):
         username = User.objects.get(id=logged_user)
         is_followingg = Follower.objects.filter(
         follower=logged_user, following=profile_user.id).count()
-        print(logged_user)
-        print(profile_user)
-        print(f'This isssssssssssssssss {is_followingg}')
+
         likes = Like.objects.filter(post=OuterRef('id'), user_id=logged_user)
         posts = Post.objects.filter(user=profile_user).order_by(
             'post_date').annotate(current_like=Count(likes.values('id')))
@@ -278,9 +283,16 @@ def profile(request, username):
     paginator = Paginator(posts, MAX_POSTS_PER_PAGE)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    print(f"Hello, {profile_user.cover_image.url} ")
+
+    
+    tmpJson = serializers.serialize("json",followingList)
+    tmpObj = json.loads(tmpJson)
+    
+
+    
     return render(request, "network/profile.html", { "followersList": followersList,
     "followingList": followingList,
+    "userinfo": json.dumps(tmpObj),
      "user_profile": profile_user, 
      "posts": page_obj, 
      "is_following": is_followingg, 
@@ -288,9 +300,9 @@ def profile(request, username):
      'total_followers': total_followers,
      "username":username,
      'suggestionList': random.sample(suggestionList, 3),
-     'form': NewPostForm(), 'form_edit': NewEditPostForm()
+     'form': NewPostForm(), 'form_edit': NewEditPostForm(),
+     
     })
-
 
 
 
@@ -358,6 +370,11 @@ def notifications(request):
         followingList = Follower.objects.filter(follower=int(user))
         # Saving a QuerySet of User's Followers
         followersList = Follower.objects.filter(following=int(user))
+        
+        tmpJson = serializers.serialize("json",followersList)
+        tmpObj = json.loads(tmpJson)
+        x = json.dumps(tmpObj)
+        print(x)
         likes = Like.objects.filter(post=OuterRef('id'), user_id=user)
         posts = Post.objects.filter().order_by(
             '-post_date').annotate(current_like=Count(likes.values('id')))
@@ -403,6 +420,7 @@ def notifications(request):
         'form_edit': NewEditPostForm(),
         "followingList": followingList,
         "followersList":followersList,
+        "xx":json.dumps(tmpObj),
         ###
         'suggestionList': random.sample(suggestionList, 3),
         "is_following": is_following
@@ -463,5 +481,59 @@ def testing(request):
 
     return render(request, 'network/testing.html',{'FOLLOWERZ':usernames})
 
+'''
+def jsonresponse2(request, username):
+    profile_user = User.objects.get(username=username)
+    followingList = Follower.objects.filter(follower=int(profile_user.id))
+    
+
+    
+    following = []
+    for i in followingList:
+        user = i.following.profile_image.url
+        following.append(user)
+    
+    print(following)
+        
+    followingJSON = serializers.serialize('json', following)
+    
+    
+    
+    dict_obj = model_to_dict(followingList)
+    
+    return HttpResponse(followingJSON, content_type='application/json')
+'''
+'''
+def jsonresponseExample(request, username):
+    Current_User = User.objects.get(username=username)
+    #List of who this user follows
+    followingList = Follower.objects.filter(follower=int(Current_User.id))
+    
+    UserInfoList = []
+    for user in followingList:
+        singleUser = User.objects.filter(username=user.following).values( 'username','bio', 'profile_image')
+        UserInfoList.append(singleUser)
+    
+    
+    results = Follower.objects.filter(follower=int(Current_User.id)).values('follower', 'following', 'following_id')
+    results2 = User.objects.filter(username='mn').values( 'username','bio', 'profile_image')
+    print(UserInfoList)
+    
+    return JsonResponse({'results':list(results), 'results2':list(results2)})
+    
+'''
 
 
+
+def jsonresponse(request, username):
+    Current_User = User.objects.get(username=username)
+    #List of who this user follows
+    followingList = Follower.objects.filter(follower=int(Current_User.id))
+    
+    UsersInfo = []
+    for user in followingList:
+        singleUser = User.objects.filter(username=user.following).values( 'username','bio', 'profile_image')
+        UsersInfo += singleUser
+    print(UsersInfo)
+    return JsonResponse({'UsersInfo':list(UsersInfo)})
+    
