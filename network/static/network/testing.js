@@ -1,9 +1,10 @@
+
+
                 let user = 'zumba';
-                fetch(`/jsonresponse/${user}`)
+                fetch(`/jsonresponse/profile=${user}`)
                 .then(response => response.json())
                 .then(data => { console.log(data);
                 const userInfo = data['UsersInfo'];
-
 
 
                 var user,picture;
@@ -11,7 +12,7 @@
                 for (let i = 0; i < data['UsersInfo'].length; i++) {
 
                 
-
+                id = data['UsersInfo'][i].id;
                 bio = data['UsersInfo'][i].bio;
                 user = data['UsersInfo'][i].username;
                 picture = data['UsersInfo'][i].profile_image;
@@ -23,12 +24,13 @@
                 <div class="card-body">
 
                 <h5 class="card-title"><a id="followingUser" href="/profile/${user}">${user}</a> <i class="fas fa-check-circle"></i></h5>
-            
+
+
                  <p class="card-text">
                 <div id="myBio" style="margin-right:7%;" class="card-link">&nbsp<small class="text-muted">${bio}</small>
                 </div> </p></div>`;
 
-
+                
 
                 document.getElementById('content1').appendChild(element);
 

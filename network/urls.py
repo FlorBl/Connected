@@ -18,8 +18,11 @@ urlpatterns = [
     path("editpost/<int:id>", views.editpost, name="editpost"),
     path("notifications", views.notifications, name="notifications"),
     path("updateInfo", views.updateInfo, name="updateInfo"),
-    path("jsonresponse/<str:username>", views.jsonresponse, name="jsonresponse")
+    path("jsonresponse/<str:username>", views.jsonresponse, name="jsonresponse"),
+    path("jsonresponse2/<str:username>", views.jsonresponse2, name="jsonresponse2"),
+    path("allUsers", views.allUsers, name="allUsers"),
+    path("mobile", views.mobile, name="mobile")
     
-
+    
 ]
 

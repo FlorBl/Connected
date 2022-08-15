@@ -1,0 +1,37 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<div class="mainA"><!-- Center Div -->  
+    <div>
+<article id="searchinggg" class="" style="position:absolute;z-index:1000;">
+<input  id="searchUsersss" type="text" class="inputS articleOneInput" placeholder="&#xF002; Search Network" >
+
+</article>
+</div>   
+{% if user.is_authenticated %}
+             <article class="suggestion" style="padding:10px 50px 100px 40px;position: relative;border-top:40px solid white;">
+                    <h5>Who to follow</h5>
+
+                    <div class="demo"  id="searchUsers222">
+
+
+                    </div>
+
+            </article>
+    {% endif %}
+
+
+
+
+        </article>
+</div>
+
+
+
+
+
+<script>
+</script>
+{% endblock %}

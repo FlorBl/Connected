@@ -331,7 +331,7 @@ a:link {
   transition: width .35s ease-in-out;
 }
 .inputS[type=text]:focus {
-  width: 350px;
+  width: 220px;
 }
 
 .inputS:focus{
@@ -542,7 +542,7 @@ margin-top:2%;
 .articleTop{
     max-width: 22vw;
     height: 30vh;
-    margin:5% 5% 0% 2%;
+    margin:20% 5% 0% 2%;
     border-radius: 20px;
     height:fit-content;
 }
@@ -785,7 +785,9 @@ input[type="file"] {
 
 }
 
-
+.prof{
+    border-radius: 100px;
+}
 
 /* Line between Profile info / Posts */
 .separator{
@@ -833,6 +835,7 @@ background-color: rgb(105,105,105) !important;
 }
 div.demo:hover{
     background-color: 	rgb(232,232,232);
+    cursor: pointer;
 }
 div.demo {
     display:table;
@@ -866,4 +869,24 @@ margin-top:-20px;
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+/*****************************/
+
+.li-User{
+background-color: white;
+text-align: center;
+width: auto;
+display: block;
+}
+.li-User:hover{
+    background-color: #eff3f4;
+    cursor: pointer;
+}
+ul {
+  list-style-type: none;
+}
+
+.btnS:hover{
+    background-color: #585858 !important;
 }

@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-
     if (document.getElementById("btnSuggestions")) {
         document.querySelectorAll('#btnSuggestions').forEach(e => e.addEventListener("click", function (event) {
             

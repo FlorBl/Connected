@@ -13,7 +13,10 @@ from django.core import serializers
 import time
 import random
 import json
+from django.core.exceptions import BadRequest
 from django.forms.models import model_to_dict
+import copy
+
 
 
 MAX_POSTS_PER_PAGE = 10
@@ -526,14 +529,121 @@ def jsonresponseExample(request, username):
 
 
 def jsonresponse(request, username):
-    Current_User = User.objects.get(username=username)
-    #List of who this user follows
-    followingList = Follower.objects.filter(follower=int(Current_User.id))
-    
-    UsersInfo = []
-    for user in followingList:
-        singleUser = User.objects.filter(username=user.following).values( 'username','bio', 'profile_image')
-        UsersInfo += singleUser
-    print(UsersInfo)
+    if request.method == 'GET':
+        username = request.session['_auth_user_id']
+        
+        Current_User = User.objects.get(id=username)
+        
+        #List of who this user follows
+        followingList = Follower.objects.filter(follower=int(Current_User.id))
+            
+        UsersInfo = []
+        
+        for user in followingList:
+            singleUser = User.objects.filter(username=user.following).values( 'username','bio', 'profile_image','id')
+            UsersInfo += singleUser
+    else:
+        return JsonResponse({'Error':'Method Not Allowed!'})
     return JsonResponse({'UsersInfo':list(UsersInfo)})
     
+    
+def allUsers(request):
+    if request.method == 'GET' or "POST":
+        users = []
+        user = ''
+        allUsers = User.objects.all().values('username')
+        for i in allUsers:
+            user = copy.copy(i['username'])
+            users.append(user)
+    
+
+    return JsonResponse({'UsersInfo':list(users)})
+
+def mobile(request):
+    if request.user.is_authenticated:
+        user = request.session['_auth_user_id']
+        username = User.objects.get(id=user)
+        followingList = Follower.objects.filter(follower=int(user))
+        # Saving a QuerySet of User's Followers
+        followersList = Follower.objects.filter(following=int(user))
+        
+        tmpJson = serializers.serialize("json",followersList)
+        tmpObj = json.loads(tmpJson)
+        x = json.dumps(tmpObj)
+        print(x)
+        likes = Like.objects.filter(post=OuterRef('id'), user_id=user)
+        posts = Post.objects.filter().order_by(
+            '-post_date').annotate(current_like=Count(likes.values('id')))
+        
+        '''
+        '''
+        #List of who the current user follows:
+        currentUser = Follower.objects.filter(follower_id=user)
+
+        #Create an empty list with then copy the results
+        userFollowing = []
+        for i in currentUser:
+            userFollowing.append(i.following_id)
+
+
+        #Create a list for users
+        userList=[]
+
+        users = User.objects.all()
+        for i in users:
+            userList.append(i.id)
+
+
+        #Create a new List without same elements
+        followSuggestions = [x for x in userList if x not in userFollowing]
+        suggestionList = []
+        for i in followSuggestions:
+            x = User.objects.get(id=i)
+            suggestionList.append(x)
+        
+        for i in followSuggestions:
+            is_following = Follower.objects.filter(follower=user, following=i).count()
+    return render(request, "network/mobile.html",{'suggestionList': random.sample(suggestionList, 10)})
+
+
+
+##################################
+##################################
+def jsonresponse2(request, username):
+    if request.method == 'GET':
+        username = request.session['_auth_user_id']
+        
+        Current_User = User.objects.get(id=username)
+        
+        #List of who this user follows
+        followingList = Follower.objects.filter(follower=int(Current_User.id))
+            
+        UsersInfo = []
+        
+        
+        #Create a list for users
+        userList=[]
+
+        users = User.objects.all()
+        for i in users:
+            userList.append(i.id)
+
+
+        #Create a new List without same elements
+        followSuggestions = [x for x in userList if x not in followingList]
+        print(f'This is followSuggestions: {followSuggestions}',flush=True)
+        
+        suggestionList = []
+        for i in followSuggestions:
+            x = User.objects.filter(id=i).values('id','username','bio','profile_image')
+            suggestionList += x
+            
+        print(f'This is suggestionList: {suggestionList}',flush=True)
+        
+        for user in followingList:
+            singleUser = User.objects.filter(username=user.following).values( 'username','bio', 'profile_image','id')
+            UsersInfo += singleUser
+            
+    else:
+        return JsonResponse({'Error':'Method Not Allowed!'})
+    return JsonResponse({'suggestions':list(suggestionList)})
