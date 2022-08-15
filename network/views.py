@@ -610,7 +610,7 @@ def mobile(request):
 ##################################
 ##################################
 def jsonresponse2(request, username):
-    if request.method == 'GET':
+    if request.method == 'GET' and request.user.is_authenticated:
         username = request.session['_auth_user_id']
         
         Current_User = User.objects.get(id=username)

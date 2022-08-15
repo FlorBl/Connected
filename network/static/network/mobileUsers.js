@@ -2,7 +2,6 @@
 var allUsers2 = document.getElementById('searchUsersss');
 const element2 = document.getElementById("searchUsers222");
 var value2;
-var createUser;
 $("#searchUsersss").on("keyup", function() { value2 = $(this).val();})
 
 var newArrayy = [];
@@ -10,7 +9,7 @@ var newerArray = [];
 
 const quantity2 = 5;
 
-allUsers2.onclick = function(){
+allUsers2.onkeyup = function(){
         fetch('/jsonresponse2/u')
         .then(response => response.json())
         .then(data => {
@@ -63,7 +62,7 @@ allUsers2.onclick = function(){
      const result = newerArray.filter(item => item.toLowerCase().indexOf(value2) > -1);
     console.log(result);
 
-     if (value === '' || !result.length) {
+     if (value2 === '' || !result.length) {
           newValues = [];
       }
 
@@ -71,7 +70,7 @@ allUsers2.onclick = function(){
         newValues.push(result[i]);
       }
       
-      if(value === '' || !newValues.length) {
+      if(value2 === '' || !newValues.length) {
           element2.innerHTML = "";        
           return;
        }
