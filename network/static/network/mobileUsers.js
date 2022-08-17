@@ -84,7 +84,6 @@ allUsers2.onkeyup = function(){
       for (const username of uniqueElement) { 
         
         let addUser = newArrayy.find(person => person.user === username);
-        alert(addUser.profile);
 
         element2.innerHTML += `
         <div class="demo">

@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
                         // Add the user to new following List
-                        alert(data.user_profile);
 
                         var element = document.createElement("div");
                 element.innerHTML = ` <div class="profilePic" data-identifier>
