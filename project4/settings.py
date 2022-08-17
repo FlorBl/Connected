@@ -14,7 +14,8 @@ import os
 import django_on_heroku
 import dj_database_url
 from decouple import config
-from .aws.conf import *
+
+# from .aws.conf import *
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -145,7 +146,6 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # until here
 django_on_heroku.settings(locals(), staticfiles=False)
-'''
 #S3 BUCKETS CONFIG (KEY_ID, SECRET_KEY, SHOULD ALL BE HIDDEN! )
 AWS_ACCESS_KEY_ID = 'AKIAZHCVDPUKBB2LK6WD'
 AWS_SECRET_ACCESS_KEY = '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'
@@ -154,7 +154,6 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-'''
 ''' This is for CORS configuration on AWS SS3 in XML
 
 This is in JSON
