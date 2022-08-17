@@ -88,9 +88,9 @@ allUsers2.onkeyup = function(){
 
         element2.innerHTML += `
         <div class="demo">
-                        <a href="/profile/${addUser}">
-                        <span><img class="suggestionPic"  src="${addUser.profile}"></span>
-                        <span class="middle"><strong>${addUser.profile}</strong><br> <p style="padding-left:8px;">@${addUser.user}</p></span>
+                        <a href="/profile/${addUser.user}">
+                        <span><img class="suggestionPic"  src="/media/${addUser.profile}"></span>
+                        <span class="middle"><strong>${addUser.user}</strong><br> <p style="padding-left:8px;">@${addUser.user}</p></span>
                         <span>
                         </a>
                             <button class="btnS" onclick="callThis();" id="btnSuggestions" data-id="${addUser.id}" type="button"  style="background-color:rgb(15,20,25);float:right;color:whitesmoke;font-weight:bold;padding:3px 15px;border-radius:50px;">Follow</button>
