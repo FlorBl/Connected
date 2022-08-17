@@ -101,7 +101,8 @@
             </article>
             {% endif %}
             {% if user.is_authenticated %}
-             <article class="suggestion" style="padding:1px 5px 1px 20px;position: relative;border-top:40px solid white;">
+                    {% block suggestions %}
+             <article class="suggestion hideSuggestion" style="padding:1px 5px 1px 20px;position: relative;border-top:40px solid white;">
                     <h5>Who to follow</h5>
                         {% for i in suggestionList %}
                     <div class="demo">
@@ -110,7 +111,6 @@
                         <span class="middle"><strong>{{i}}</strong><br> <p style="padding-left:8px;">@{{i}}</p></span>
                         </a>
                         <span>
-
                             <button onclick="callThis();" id="btnSuggestions" class="btnS" data-id="{{i.id}}" type="button"  style="background-color:rgb(15,20,25);float:right;color:whitesmoke;font-weight:bold;padding:3px 15px;border-radius:50px;">Follow</button>
                             
                         </span>
@@ -118,6 +118,8 @@
                         {% endfor %}
 
             </article>
+         {% endblock %}
+
             {% endif %}
 
 

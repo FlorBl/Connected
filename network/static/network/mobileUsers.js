@@ -1,4 +1,4 @@
-
+document.addEventListener('DOMContentLoaded', function(){
 var allUsers2 = document.getElementById('searchUsersss');
 const element2 = document.getElementById("searchUsers222");
 var value2;
@@ -76,7 +76,7 @@ allUsers2.onkeyup = function(){
        }
        
       // Gets 5 last elements of array
-      var filterResult = (newValues.slice((newValues.length - 10), newValues.length));
+      var filterResult = (newValues.slice((newValues.length - 15), newValues.length));
 
       // Removes all duplicatess
       let uniqueElement = [...new Set(filterResult)];
@@ -100,5 +100,6 @@ allUsers2.onkeyup = function(){
         
       }
   }
+});
 
 

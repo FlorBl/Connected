@@ -12,9 +12,9 @@
 </div>   
 {% if user.is_authenticated %}
              <article class="suggestion" style="padding:10px 50px 100px 40px;position: relative;border-top:40px solid white;">
-                    <h5 style="border:1px solid red;">Who to follow</h5>
+                    <h5>Who to follow</h5>
 
-                    <div class="demo"  id="searchUsers222">
+                    <div class="demo" style="border:1px solid red;background:lightpink;" id="searchUsers222">
 
 
                     </div>
@@ -28,6 +28,8 @@
         </article>
 </div>
 
+{% block suggestions %}
+{% endblock %}
 
 
 
