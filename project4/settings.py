@@ -16,7 +16,6 @@ import dj_database_url
 from decouple import config
 
 
-# from .aws.conf import *
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -144,7 +143,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # until here
 django_on_heroku.settings(locals(), staticfiles=False)
 #S3 BUCKETS CONFIG (KEY_ID, SECRET_KEY, SHOULD ALL BE HIDDEN! )
