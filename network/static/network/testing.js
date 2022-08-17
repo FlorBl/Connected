@@ -17,7 +17,6 @@
                 user = data['UsersInfo'][i].username;
                 picture = data['UsersInfo'][i].profile_image;
 
-                console.log(`Suggestions.js -> Image is: ${picture}`);
                 
                 var element = document.createElement("div");
                 element.innerHTML = ` <div class="profilePic">

@@ -75,7 +75,7 @@ allUsers2.onkeyup = function(){
        }
        
       // Gets 5 last elements of array
-      var filterResult = (newValues.slice((newValues.length - 5), newValues.length));
+      var filterResult = (newValues.slice((newValues.length - 2), newValues.length));
 
       // Removes all duplicatess
       let uniqueElement = [...new Set(filterResult)];
@@ -84,7 +84,7 @@ allUsers2.onkeyup = function(){
       for (const username of uniqueElement) { 
         
         let addUser = newArrayy.find(person => person.user === username);
-        console.log(addUser.profile_image);
+        alert(addUser.profile);
 
         element2.innerHTML += `
         <div class="demo">
