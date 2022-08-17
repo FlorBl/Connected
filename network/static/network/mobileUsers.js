@@ -89,7 +89,7 @@ allUsers2.onkeyup = function(){
         element2.innerHTML += `
         <div class="demo">
                         <a href="/profile/${addUser}">
-                        <span><img class="suggestionPic"  src="/media/${addUser.profile}"></span>
+                        <span><img class="suggestionPic"  src="${addUser.profile}"></span>
                         <span class="middle"><strong>${addUser.user}</strong><br> <p style="padding-left:8px;">@${addUser.user}</p></span>
                         <span>
                         </a>
