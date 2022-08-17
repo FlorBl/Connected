@@ -60,7 +60,6 @@ allUsers2.onkeyup = function(){
 
 
      const result = newerArray.filter(item => item.toLowerCase().indexOf(value2) > -1);
-    console.log(result);
 
      if (value2 === '' || !result.length) {
           newValues = [];
@@ -76,7 +75,7 @@ allUsers2.onkeyup = function(){
        }
        
       // Gets 5 last elements of array
-      var filterResult = (newValues.slice((newValues.length - 15), newValues.length));
+      var filterResult = (newValues.slice((newValues.length - 5), newValues.length));
 
       // Removes all duplicatess
       let uniqueElement = [...new Set(filterResult)];
@@ -85,12 +84,13 @@ allUsers2.onkeyup = function(){
       for (const username of uniqueElement) { 
         
         let addUser = newArrayy.find(person => person.user === username);
+        console.log(addUser.profile_image);
 
         element2.innerHTML += `
         <div class="demo">
                         <a href="/profile/${addUser}">
                         <span><img class="suggestionPic"  src="${addUser.profile}"></span>
-                        <span class="middle"><strong>${addUser.user}</strong><br> <p style="padding-left:8px;">@${addUser.user}</p></span>
+                        <span class="middle"><strong>${addUser.profile}</strong><br> <p style="padding-left:8px;">@${addUser.user}</p></span>
                         <span>
                         </a>
                             <button class="btnS" onclick="callThis();" id="btnSuggestions" data-id="${addUser.id}" type="button"  style="background-color:rgb(15,20,25);float:right;color:whitesmoke;font-weight:bold;padding:3px 15px;border-radius:50px;">Follow</button>

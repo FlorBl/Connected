@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
                         // Add the user to new following List
-                        console.log(data.followinguser);
-                        console.log(data.user_profile);
                         console.log(data.bio);
 
                         var element = document.createElement("div");
