@@ -14,7 +14,6 @@ import os
 import django_on_heroku
 import dj_database_url
 from decouple import config
-from storages.backends.s3boto3 import S3Boto3Storage # Added lastly
 
 
 # from .aws.conf import *
@@ -149,7 +148,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # until here
 django_on_heroku.settings(locals(), staticfiles=False)
 #S3 BUCKETS CONFIG (KEY_ID, SECRET_KEY, SHOULD ALL BE HIDDEN! )
-'''
 AWS_ACCESS_KEY_ID = 'AKIAZHCVDPUKBB2LK6WD'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'django-greensky-bucket'
@@ -157,23 +155,6 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-'''
-class MediaStorage(S3Boto3Storage): #Added lastly
-    location = 'media'
-    file_overwrite = False
-
-
-# Added lastly
-AWS_ACCESS_KEY_ID = 'AKIAZHCVDPUKBB2LK6WD'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'django-greensky-bucket'
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'project4.storages.backends.s3boto3.S3Boto3Storage'
-
-## different
-AWS_LOCATION = 'static'
 
 
 
