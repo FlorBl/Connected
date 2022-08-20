@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'livereload.middleware.LiveReloadScript'
 ]
 
 ROOT_URLCONF = 'project4.urls'
@@ -145,9 +146,11 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # until here
+''''''
 django_on_heroku.settings(locals(), staticfiles=False)
 #S3 BUCKETS CONFIG (KEY_ID, SECRET_KEY, SHOULD ALL BE HIDDEN! )
 AWS_S3_HOST = 's3.ca-central-1.amazonaws.com'
+AWS_LOCATION = 'static'
 AWS_ACCESS_KEY_ID = 'AKIAZHCVDPUKBB2LK6WD'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'django-greensky-bucket'

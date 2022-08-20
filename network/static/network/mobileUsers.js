@@ -84,11 +84,11 @@ allUsers2.onkeyup = function(){
       for (const username of uniqueElement) { 
         
         let addUser = newArrayy.find(person => person.user === username);
-
+        console.log(addUser.profile);
         element2.innerHTML += `
         <div class="demo">
-                        <a href="/profile/${addUser.user}">
-                        <span><img class="suggestionPic"  src="/media/${addUser.profile}"></span>
+                        <a href="{% url 'profile' user.username %}">
+                        <span><img class="suggestionPic"  src="${addUser.profile}"></span>
                         <span class="middle"><strong>${addUser.user}</strong><br> <p style="padding-left:8px;">@${addUser.user}</p></span>
                         <span>
                         </a>

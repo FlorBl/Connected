@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         var element = document.createElement("div");
                 element.innerHTML = ` <div class="profilePic" data-identifier>
-                <img id="followingProfile2" class="picture"  src="${data.user_profile}"></div>
+                <img id="followingProfile2" class="picture"  src="{% url 'profile' user.username %}"></div>
                 <div id="card" class="card">
                 <div class="card-body">
 
