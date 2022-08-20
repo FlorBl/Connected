@@ -17,10 +17,13 @@
                 user = data['UsersInfo'][i].username;
                 picture = data['UsersInfo'][i].profile_image;
 
-                
+                const aws3 = 'https://django-greensky-bucket.s3.amazonaws.com/'
+                var profileImage = `${aws3}`+`${picture}`;
+
                 var element = document.createElement("div");
+                
                 element.innerHTML = ` <div class="profilePic">
-                <img id="followingProfile2" class="picture"  src="/media/${picture}"></div>
+                <img id="followingProfile2" class="picture"  src="${profileImage}"></div>
                 <div id="card" class="card">
                 <div class="card-body">
 

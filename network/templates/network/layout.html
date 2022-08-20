@@ -171,11 +171,15 @@
    <i id="closeX" class="fas fa-times"></i>
 {% if user.is_authenticated and user.id == user_profile.id %}
 <div id="content1">
+    
+    <h3>equal</h3>
 
 </div>
 
-{% else %}
+{% elif user.is_authenticated and user.id != user_profile.id %}
 <div id="content">
+ not equal
+
  {% for user in followingList %}
         <div class="profilePic">
             <img id="followingProfile" class="picture"  src="{{ user.following.profile_image.url }}">
@@ -286,7 +290,7 @@
 onchange="document.getElementById('previewCover').src = window.URL.createObjectURL(this.files[0])">
         </div>
 
-        <input id="saveButton" class="welcomeBtn btnA" type="submit" value="Save" style="background-color:rgb(15,20,25);margin:15px;">
+        <input onclick="clickThis();" id="saveButton" class="welcomeBtn btnA" type="submit" value="Save" style="background-color:rgb(15,20,25);margin:15px;">
 
     </form>
 </div>

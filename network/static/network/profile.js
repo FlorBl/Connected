@@ -1,6 +1,4 @@
 
-// PopUp form for Followers
-
 // Register Form Popup
 function editProfile(){
     var profile = document.getElementById('ProfileImage');

@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         // Add the user to new following List
 
-                        var element = document.createElement("div");
+                var element = document.createElement("div");
                 element.innerHTML = ` <div class="profilePic" data-identifier>
-                <img id="followingProfile2" class="picture"  src="{% url 'profile' user.username %}"></div>
+                <img id="followingProfile2" class="picture"  src="${data.user_profile}"></div>
                 <div id="card" class="card">
                 <div class="card-body">
 
