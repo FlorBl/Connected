@@ -60,14 +60,15 @@
         {% endblock %}
 
     <div class="rightDiv2 smallerWidth">
+        {% block search %}
             <article id="searching" class="searchArticle" style="position:absolute;z-index:1000;">
                 <input onclick="ontype();" id="searchUsers" type="text" class="inputS articleOneInput" placeholder="&#xF002; Search Network" >
                 <ul id="searchUsers2"></ul>
 
             </article>
+        {% endblock %}
             
-            <article class="articleTop">
-        
+            <article id="reploadArticles" class="articleTop">  
             <article style="padding:0px 5px 20px 20px;position: relative;" >
                 <a href="https://globalgoodness.ca/en/a-machine-that-recycles-waste-back-to-life/?gclid=EAIaIQobChMI_Lv_2dfP9QIVm_bjBx29dAkIEAAYASAAEgI04vD_BwE" target="_blank" rel="">
                 <p class="articleTitle">Environment </p>

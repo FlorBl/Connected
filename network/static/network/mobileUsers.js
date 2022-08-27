@@ -86,18 +86,18 @@ allUsers2.onkeyup = function(){
         let addUser = newArrayy.find(person => person.user === username);
         const aws = 'https://django-greensky-bucket.s3.amazonaws.com/'
         var profileImage = `${aws}`+`${addUser.profile}`;
-        console.log(`Image is: ${profileImage}`);
         element2.innerHTML += `
-        <div class="demo">
-                        <a href="profile/${addUser.profile}">
+        <a href="profile/${addUser.user}">
+        <div class="demo" onmouseover="this.style.backgroundColor='#f7f9f9'" onmouseout="this.style.backgroundColor=''">
                         <span><img class="suggestionPic"  src="${profileImage}"></span>
                         <span class="middle"><strong>${addUser.user}</strong><br> <p style="padding-left:8px;">@${addUser.user}</p></span>s
                         <span>
-                        </a>
                             <button class="btnS" onclick="callThis();" id="btnSuggestions" data-id="${addUser.id}" type="button"  style="background-color:rgb(15,20,25);float:right;color:whitesmoke;font-weight:bold;padding:3px 15px;border-radius:50px;">Follow</button>
                             
                         </span>
-                        </div>`
+                        </div>
+                        </a>
+                        `
         
       }
   }

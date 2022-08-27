@@ -431,7 +431,6 @@ border-radius: 50%;
 
 
 .suggestion:hover{
-    background-color: rgb(247,249,249) !important;
     cursor: context-menu !important;
 }
 
@@ -786,7 +785,9 @@ input[type="file"] {
 }
 
 .prof{
-    border-radius: 100px;
+    border-radius:200px;
+    height: 50px;
+    width: 50px;
 }
 
 /* Line between Profile info / Posts */
@@ -834,7 +835,6 @@ textarea{
 background-color: rgb(105,105,105) !important;
 }
 div.demo:hover{
-    background-color: 	rgb(232,232,232);
     cursor: pointer;
 }
 div.demo {
