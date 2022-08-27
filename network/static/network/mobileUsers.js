@@ -75,7 +75,7 @@ allUsers2.onkeyup = function(){
        }
        
       // Gets 5 last elements of array
-      var filterResult = (newValues.slice((newValues.length - 2), newValues.length));
+      var filterResult = (newValues.slice((newValues.length - 10), newValues.length));
 
       // Removes all duplicatess
       let uniqueElement = [...new Set(filterResult)];
