@@ -1,3 +1,4 @@
+// Function that allows the user to follow multiple users by clicking without visiting the profile
 document.addEventListener('DOMContentLoaded', function () {
 
     if (document.getElementById("btnSuggestions")) {

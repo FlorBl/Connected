@@ -1,4 +1,4 @@
-
+// Shows a list of users, matching or similar to the input typed.
 var allUsers = document.getElementById('searchUsers');
 const element = document.getElementById("searchUsers2");
 var value;

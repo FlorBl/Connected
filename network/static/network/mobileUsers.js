@@ -1,21 +1,19 @@
+// Connected to /mobile route, suggest an array of people to follow
 document.addEventListener('DOMContentLoaded', function(){
-var allUsers2 = document.getElementById('searchUsersss');
-const element2 = document.getElementById("searchUsers222");
-var value2;
-$("#searchUsersss").on("keyup", function() { value2 = $(this).val();})
 
-var newArrayy = [];
-var newerArray = [];
+var arrayUserInfo = [];
+var arrayUsernames = [];
+var inputValue;
+var userInput = document.getElementById('userInput');
+const userElement = document.getElementById("searchResults");
+$("#userInput").on("keydown", function() { inputValue = $(this).val().toLowerCase();})
 
-const quantity2 = 5;
 
-allUsers2.onkeyup = function(){
+userInput.onkeydown = function(){
         fetch('/jsonresponse2/u')
         .then(response => response.json())
         .then(data => {
         const users = data;
-        
-
 
         var x;
         for (var x = 0; x < users['suggestions'].length; x++) {
@@ -29,39 +27,35 @@ allUsers2.onkeyup = function(){
             'id': users['suggestions'][x].id,
             }
 
-            newArrayy.push(User);
+            arrayUserInfo.push(User);
     }
 })
-    // str = JSON.stringify(newArrayy, null, 4); // (Optional) beautiful indented output.
-     //console.log(str); // Displays output using window.alert()
+ 
 
-    for(let i = 0; i < newArrayy.length; i++){
-        newerArray.push(newArrayy[i].user)
+    for(let i = 0; i < arrayUserInfo.length; i++){
+        arrayUsernames.push(arrayUserInfo[i].user)
     }
-
-   // str2 = JSON.stringify(newerArray, null, 4)
-    // console.log(str2); // Displays output using window.alert()
 
 }
 
 
 
-    $("#searchUsersss").on("keyup", function() {
+    $("#userInput").on("keydown", function() {
       // call this function by passing user input
     
-      filterResults2($(this).val());
+      filterResults2($(this).val().toLowerCase());
     })
 
 
-  function filterResults2(value2){
-     element2.innerHTML = "";     
+  function filterResults2(inputValue){
+     userElement.innerHTML = "";     
 
      let newValues = [];     
 
 
-     const result = newerArray.filter(item => item.toLowerCase().indexOf(value2) > -1);
+     const result = arrayUsernames.filter(item => item.toLowerCase().indexOf(inputValue) > -1);
 
-     if (value2 === '' || !result.length) {
+     if (inputValue === '' || !result.length) {
           newValues = [];
       }
 
@@ -69,8 +63,8 @@ allUsers2.onkeyup = function(){
         newValues.push(result[i]);
       }
       
-      if(value2 === '' || !newValues.length) {
-          element2.innerHTML = "";        
+      if(inputValue === '' || !newValues.length) {
+          userElement.innerHTML = "";        
           return;
        }
        
@@ -83,10 +77,10 @@ allUsers2.onkeyup = function(){
 
       for (const username of uniqueElement) { 
         
-        let addUser = newArrayy.find(person => person.user === username);
+        let addUser = arrayUserInfo.find(person => person.user === username);
         const aws = 'https://django-greensky-bucket.s3.amazonaws.com/'
         var profileImage = `${aws}`+`${addUser.profile}`;
-        element2.innerHTML += `
+        userElement.innerHTML += `
         <a href="profile/${addUser.user}">
         <div class="demo" onmouseover="this.style.backgroundColor='#f7f9f9'" onmouseout="this.style.backgroundColor=''">
                         <span><img class="suggestionPic"  src="${profileImage}"></span>

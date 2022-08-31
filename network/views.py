@@ -48,11 +48,13 @@ def welcome(request):
     for i in userz:
         usernames.append(i.username)
         emails.append(i.email)
-
+        
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("index"))
     
     return render(request, 'network/welcome.html',context={'TESTING':usernames, 'EMAILS':emails})
 
-def welcome2(request):
+def afterLogout(request):
     posts = Post.objects.order_by('-post_date').all()
     paginator = Paginator(posts, MAX_POSTS_PER_PAGE)
     page_number = request.GET.get('page')
@@ -64,8 +66,10 @@ def welcome2(request):
         
     total_following = Follower.objects.filter(follower=profile_user).count()
     total_followers = Follower.objects.filter(following=profile_user).count()
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("index"))
     
-    return render(request, "network/welcome2.html",{
+    return render(request, "network/afterLogout.html",{
             'total_following': total_following,
             'total_followers': total_followers,
             'posts': page_obj})
@@ -332,7 +336,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect(reverse("welcome2"))
+    return HttpResponseRedirect(reverse("afterLogout"))
 
 
 def register(request):
@@ -415,7 +419,7 @@ def notifications(request):
     paginator = Paginator(posts, MAX_POSTS_PER_PAGE)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, "network/test.html", {
+    return render(request, "network/notifications.html", {
         "username":username,
         'posts': page_obj,
         'form': NewPostForm(),
@@ -460,17 +464,6 @@ def updateInfo(request):
 
 
     return HttpResponseRedirect(reverse("profile", args=(updateUser.username,)))
-
-
-# Suggestions about users to follow
-def Suggest(request):
-    if request.user.is_authenticated:
-        id = request.session['_auth_user_id']
-    
-    return render(request, "network/test.html", {
-        'suggestionList':suggestionList
-        })
-
 
 
 # Testing for AJAX

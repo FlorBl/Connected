@@ -1,7 +1,6 @@
 
 
-                let user = 'zumba';
-                fetch(`/jsonresponse/profile=${user}`)
+                fetch(`/jsonresponse/profile`)
                 .then(response => response.json())
                 .then(data => { console.log(data);
                 const userInfo = data['UsersInfo'];
@@ -38,7 +37,7 @@
 
                 document.getElementById('content1').appendChild(element);
 
-
+                console.log(element);
 
 
                 }

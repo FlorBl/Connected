@@ -1,4 +1,4 @@
-// Register Form Popup
+// Register/Login Form Popup ---> afterLogout.html
 function register(){
     
     var lightbox = document.getElementById('lightbox');
@@ -77,7 +77,6 @@ function popup(){
     dimmer.style.width =  window.innerWidth + 'px';
     dimmer.style.height = '100%';
     dimmer.className = 'dimmer';
-    
     dimmer.onclick = function(){
         document.body.removeChild(this);   
         lightbox.style.visibility = 'hidden';

@@ -1,5 +1,5 @@
 
-// Register Form Popup
+// Pops up the Edit Profile section where the user can make changes.
 function editProfile(){
     var profile = document.getElementById('ProfileImage');
     var lightbox = document.getElementById('profileEdit');

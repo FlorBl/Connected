@@ -1,7 +1,5 @@
 
-// PopUp form for Followers
-
-// Register Form Popup
+// Register/Login Form Popup after logging out
 function registerIndex(){
 
     var lightbox = document.getElementById('registerIndex');
