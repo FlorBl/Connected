@@ -32,7 +32,7 @@ a:hover { color: inherit; }
     max-width: 50%;
     border-radius: 20px;
     border:0.5px solid#D8D8D8;
-    background-color: rgb(15,154,251);
+    background-color:#006100;
     color: white;
     padding: 10px 30px;
 
@@ -42,18 +42,18 @@ a:hover { color: inherit; }
 
 }
 .welcomeBtn:hover{
-    background-color: #1a8cd8;
+    background-color: #17453f;
     text-decoration: none;
     color: white;
     cursor: pointer;
 }
 #second:hover{
-    background-color: #e8f5fd;
+    background-color:#F5F5F5;
     cursor: pointer;
 }
 #second{
     background-color: white;
-    color: rgb(15,154,251);
+    color:#00573F;
 
 }
 #first{
@@ -85,7 +85,7 @@ h5{
 
 .fa-globe-americas{
     font-size: 65px;
-    color:rgb(15,154,251) ;
+    color:#00573F ;
     margin-bottom: 30px;
 }
 
@@ -172,13 +172,13 @@ a {
 
 #singupIcon{
     font-size: 35px;
-    color:rgb(15,154,251) ;
+    color:#58a084;
     margin-bottom: 20px;
 }
 
 #globe{
     font-size: 35px;
-    color:rgb(15,154,251) ;
+    color:#00573F;
     margin-top: 20px;
 }
 
@@ -375,7 +375,7 @@ h5{
 }
 
 .fa-check-circle{
-    color:rgb(15,154,251);
+    color:#55a084 ;
     font-size: medium;
 }
 
@@ -509,7 +509,7 @@ margin-top:2%;
 
 #register{
     background-color: white;
-    color:#1a8cd8;
+    color:#00573F;
 }
 #register:hover{
     background-color: white;
@@ -685,7 +685,7 @@ margin-top:2%;
 
 
 .underline {
-  background-image: linear-gradient(#0f9afb,#1af);
+  background-image: linear-gradient(#498a70 ,#498a70);
   background-position: bottom center; /*Adjust the background-position to move the line*/
   background-size: 80% 2px; /*Adjust the background size to control length and height*/
   background-repeat: no-repeat;

@@ -7,15 +7,11 @@
 {% block body %}
 
     <div>
-        <div class="middleDiv"><img src="{% static 'network/15.jpg' %}"></div>
+        <div class="middleDiv"><img src="https://images.pexels.com/photos/130621/pexels-photo-130621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></div>
         <div class="infoDiv">
             <div>
-            {% for post in posts %}
-                {% if forloop.first %}
-            <h5 id="h5" style="width:fit-content;padding-top:10px" class="card-title"><span>{{post.user.username}}</span> <i class="fas fa-check-circle"></i></h5>
-            <p class="card-text" style="font-size:large;"><small class="text-muted">@{{post.user.username}}</small></p>
-                {% endif %}
-            {% endfor %}
+            <h5 id="h5" style="width:fit-content;padding-top:10px" class="card-title"><span>@GlobalNetwork</span> <i class="fas fa-check-circle"></i></h5>
+            <p class="card-text" style="font-size:large;"><small class="text-muted">@GlobalNetwork</small></p>
         <article>Welcome to our platform, got anything wandering in your mind? Well, this is the place!</article>
         <br>
         <button  onclick="popup()" class="followBtn">Follow</button>
@@ -75,12 +71,12 @@
         </div>
         <div class="rightDiv"  onclick="popup()">
             
-                <div><img src="{% static 'network/1.jpg' %}"></div>
-                <div><img src="{% static 'network/2.jpg' %}"></div>
-                <div><img src="{% static 'network/3.jpg' %}"></div>
-                <div><img src="{% static 'network/4.jpg' %}"></div>
-                <div><img src="{% static 'network/5.jpg' %}"></div>
-                <div><img src="{% static 'network/6.jpg' %}"></div>
+                <div><img src="https://images.pexels.com/photos/3937645/pexels-photo-3937645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></div>
+                <div><img src="https://images.pexels.com/photos/3230839/pexels-photo-3230839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></div>
+                <div><img src="https://images.pexels.com/photos/13188455/pexels-photo-13188455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></div>
+                <div><img src="https://images.pexels.com/photos/12873430/pexels-photo-12873430.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></div>
+                <div><img src="https://images.pexels.com/photos/73910/mars-mars-rover-space-travel-robot-73910.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></div>
+                <div><img src="https://images.pexels.com/photos/13270364/pexels-photo-13270364.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></div>
                 
         </div>
         

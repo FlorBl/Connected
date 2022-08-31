@@ -24,21 +24,21 @@
         
                 <i id="globe" class="fas fa-globe-americas show"></i>
 
-             <h4><a class="nav-link" href="{% url 'notifications' %}"><i  class="show m far fa-bell fa-sm" ></i><hide>Notifications</hide></a></h4> 
+             <h4><a class="nav-link" href="{% url 'notifications' %}"><i  class="show m far fa-bell fa-sm" ></i>{% block Notifs %}<hide>Notifications</hide>{% endblock %}</a></h4> 
             
-             <h4 ><a class="nav-link" href="{% url 'mobile' %}"><i class="show m  fa-solid fa-people-group fa-sm"></i>{% block underline %}<span class="underline"><hide>Suggestions</hide></span>{% endblock %}</a></h4>
+             <h4 ><a class="nav-link" href="{% url 'mobile' %}"><i  class="show m  fa-solid fa-people-group fa-sm"></i>{% block Sugges %}<hide>Suggestions</hide>{% endblock %}</a></h4>
              
-            <h4 ><a class="nav-link" href="{% url 'profile' user.username %}"><i style="color:rgb(60,64,68);" class="show m far fa-user fa-sm"></i><span class="underline"><hide>Profile</hide></span></a></h4>
+            <h4 ><a class="nav-link" href="{% url 'profile' user.username %}"><i style="color:rgb(60,64,68);" class="show m far fa-user fa-sm"></i>{% block Prof %}<hide>Profile</hide>{% endblock %}</a></h4>
 
-            <h4><a class="nav-link" href="{% url 'index' %}"><i  class="show m fas fa-light fa-home fa-sm"></i><hide>Home</hide></a></h4>
+            <h4><a class="nav-link" href="{% url 'index' %}"><i  class="show m fas fa-light fa-home fa-sm"></i>{% block Home %}<hide>Home</hide>{% endblock %}</a></h4>
 
-            <h4><a class="nav-link" href="{% url 'logout' %}"><i class="show m fas fa-sign-out-alt fa-sm"></i><hide>Log out</hide></a></h4>
+            <h4><a class="nav-link" href="{% url 'logout' %}"><i class="show m fas fa-sign-out-alt fa-sm"></i>Log out</a></h4>
 
             <h4 ><i onclick="postsForm();" style="color:rgb(60,64,68);" class="show m fas fa-paper-plane fa-sm ab" style="backgound-color:rgb(15,154,251);"></i><span class="underline"></span></h4>
             
 
             {% block postForm %}
-            <a onclick="postsForm();" class="postSide postButton" style="width:100%;height:100%;border-radius:40px;background-color:rgb(29,155,240);color:whitesmoke;padding:10px 50px;outline:none;font-weight:700;font-size:large;">Post</a>
+            <a onclick="postsForm();" class="postSide postButton" style="width:100%;height:100%;border-radius:40px;background-color:#498a70;color:whitesmoke;padding:10px 50px;outline:none;font-weight:700;font-size:large;">Post</a>
             {% endblock %}
             <div class="prof" style="margin-right:50px;position:fixed;bottom:2%;">
             <img class="prof" style="position: absolute;top: margin:40px" class="picture show" src="{{ username.profile_image.url }}">
@@ -76,7 +76,7 @@
                 <a href="https://globalgoodness.ca/en/a-machine-that-recycles-waste-back-to-life/?gclid=EAIaIQobChMI_Lv_2dfP9QIVm_bjBx29dAkIEAAYASAAEgI04vD_BwE" target="_blank" rel="">
                 <p class="articleTitle">Environment </p>
                 <h5 class="articleInfo">A machine that recycles waste back to life</h5>
-                <img class="articleImage" src="{% static 'network/news.jpg' %}">
+                <img class="articleImage" src="https://images.pexels.com/photos/4741959/pexels-photo-4741959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                 </a>
             </article>
 
