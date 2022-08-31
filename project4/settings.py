@@ -147,7 +147,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ''''''
 django_on_heroku.settings(locals(), staticfiles=False)
 #S3 BUCKETS CONFIG (KEY_ID, SECRET_KEY, SHOULD ALL BE HIDDEN! )
-'''
 AWS_S3_HOST = 's3.ca-central-1.amazonaws.com'
 AWS_ACCESS_KEY_ID = 'AKIAZHCVDPUKBB2LK6WD'
 AWS_SECRET_ACCESS_KEY = '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'
@@ -159,7 +158,6 @@ AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
-'''
 
 '''
 AWS_S3_HOST = 's3.ca-central-1.amazonaws.com'
