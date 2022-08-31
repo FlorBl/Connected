@@ -1,4 +1,4 @@
-AWS_S3_HOST = 's3.ca-central-1.amazonaws.com'
+AWS_S3_HOSTT = 's3.ca-central-1.amazonaws.com'
 AWS_ACCESS_KEY_ID = 'AKIAZHCVDPUKBB2LK6WD'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'django-greensky-bucket'
