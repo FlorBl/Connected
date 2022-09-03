@@ -10,7 +10,7 @@
         <div class="middleDiv"><img src="https://images.pexels.com/photos/130621/pexels-photo-130621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></div>
         <div class="infoDiv">
             <div>
-            <h5 id="h5" style="width:fit-content;padding-top:10px" class="card-title"><span>@GlobalNetwork</span> <i class="fas fa-check-circle"></i></h5>
+            <h5 id="h5" style="width:fit-content;padding-top:10px;margin-bottom: 0px;" class="card-title"><span>@GlobalNetwork</span> <i class="fas fa-check-circle"></i></h5>
             <p class="card-text" style="font-size:large;"><small class="text-muted">@GlobalNetwork</small></p>
         <article>Welcome to our platform, got anything wandering in your mind? Well, this is the place!</article>
         <br>
@@ -19,12 +19,12 @@
             </div>
     </div>
 
-    <div class="tweets">
+    <div class="tweets" style="height:auto;">
         <div id="posts">
             {% for post in posts %}
         <div class="singlePost">
                 <div class="profilePic">
-                    <img class="picture"  src="{% static 'network/15.jpg' %}">
+                    <img class="picture"  src="{{ post.user.profile_image.url }}">
                 </div>
             <div class="card">
                 <div class="card-body" onclick="popup()">

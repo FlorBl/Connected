@@ -1,0 +1,228 @@
+#homeTitle{
+    height: 5%;
+    backdrop-filter: blur(16px);
+    z-index: 1000;
+    position:fixed;
+    padding:5px;
+    width:max-content;
+    display: block;
+
+}
+
+.articleTop{
+    max-width: 22vw;
+    height: 30vh;
+    margin:20% 5% 0% 2%;
+    border-radius: 20px;
+    height:fit-content;
+}
+
+.articleTitle{
+    width:55%;color:gray;
+}
+.articleInfo{
+    width:55%;
+    font-size:medium;
+}
+.articleImage{
+    width:30%;
+    height:40%;
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    border-radius:20px;
+}
+
+#settings{
+    visibility:hidden;
+    border-radius: 20px;
+    color:white;
+    z-index:100;
+    height: fit-content;
+    width:40vw;
+    padding:20px;
+    background-color: white;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#followingJs{
+    visibility: hidden;
+    border-radius: 20px;
+    color:black;
+    z-index:100;
+    height: fit-content;
+    max-width:600px;
+    min-width: 400px;
+    max-height: 65vh;
+    background-color: white;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    overflow-y: scroll;
+}
+
+#profileEdit{
+    height: 80%;
+}
+
+#postSide{
+    width:100%;
+    height:100%;
+    border-radius:40px;
+    background-color:#498a70;
+    color:whitesmoke;
+    padding:10px 50px;
+    font-weight:700;
+    font-size:large;
+    outline:none;
+
+}
+
+#postSide:hover{
+    background-color:#00573f;
+    cursor: pointer;
+}
+
+/*  #registerIndex, #loginIndex have same style */
+#followersJs, #profileEdit{
+    visibility: hidden;
+    border-radius: 20px;
+    color:black;
+    z-index:100;
+    height: fit-content;
+    max-width:600px;
+    min-width: 400px;
+    max-height: 85vh;
+    background-color: white;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    overflow-y: scroll;
+}
+
+
+#profileEdit{
+    min-width: 40vw;
+    min-height:60vh;
+    position: absolute;
+
+}
+
+.prof{
+    border-radius:200px;
+    height: 50px;
+    width: 50px;
+}
+
+.btnS:hover{
+    background-color: #585858 !important;
+}
+
+#globe{
+    font-size: 35px;
+    color:#498a70;
+    margin-top: 20px;
+}
+
+.welcomeDiv{
+    overflow-x: hidden;
+    width: 100vw;
+    display: grid;  
+    grid-template-columns: 27% 37% 26%;  
+    grid-template-rows: 100vh; 
+}
+
+.welcomeDiv > div{
+   border-right: 1px solid lightgray;
+}
+
+.firstDiv{
+    margin-left: 25%;
+    border-right: 1px solid rgb(232,232,232);
+}
+
+.rightDiv2 article article{
+    background-color:rgb(247,249,249);
+    
+}
+
+.rightDiv2 article article:hover{
+    background-color: 	rgb(232,232,232);
+    cursor: pointer;
+}
+
+
+.searchArticle{
+    position: fixed;
+    margin-left:2%;
+    margin-top:1%;
+    max-width: 22vw;
+    border-radius:20px;
+}
+
+.articleOneInput{
+    border-radius:20px;
+    font-family:Arial, FontAwesome;
+    background-color:rgb(239,243,244);
+    padding:10px 50px 10px 16px;
+    border:hidden;
+}
+
+
+.leftSide{
+    position: fixed;
+    align-content: left;
+    width: 15%;
+    height: 95%;
+
+}
+
+.leftSide > h4{
+    margin-bottom: 15px;
+    padding:5px 10px 5px 10px;
+
+
+}
+.leftSide > h4:hover{
+    cursor: pointer;
+    background-color:rgb(239,243,244);
+    width: fit-content;
+    border-radius: 20px;
+}
+
+.leftSide *{
+    padding-left: 0;
+}
+
+/* Changes the margin of the icons on the left side */
+.m{
+    margin-right: 10px;
+    padding-right:5px;
+    color:gray;
+    font-size:large;
+
+}
+
+div.iconz{
+    display:table;
+    width:100%;
+}
+
+div.iconz div{
+    display:table-cell;
+    text-align:center;
+}
+

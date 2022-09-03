@@ -1,0 +1,56 @@
+#editProfile{
+    float: right;
+    background-color: #fff;
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    padding:6px 10px;
+    font-weight: bold;
+
+}
+#editProfile:hover{
+    background-color: lightgray;
+    
+}
+
+
+.followBtn{
+position: absolute;
+top:0;
+right:0;
+display: block;
+font-size:medium;
+font-weight: bold;
+text-align: center;
+border-radius: 20px;
+border:0.5px solid#D8D8D8;
+background-color: rgb(15,20,25);
+color: white;
+padding: 5px 15px;
+margin-right: 5%;
+margin-top:2%;
+}
+
+.following{
+position: absolute;
+top:0;
+right:0;
+display: block;
+font-size:medium;
+font-weight: bold;
+text-align: center;
+border-radius: 20px;
+border:0.5px solid#D8D8D8;
+background-color: white;
+color:#1a8cd8;
+padding: 5px 15px;
+margin-right: 5%;
+margin-top:2%;
+}
+
+.main{
+    display:block;
+    position:relative;
+    max-width: 100%;
+    margin: 0 auto;
+
+}

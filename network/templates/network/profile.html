@@ -34,12 +34,12 @@
 
         {% endif %}
 
-        <h5 class="card-title profileName">
+        <h5 class="card-title profileName" style="margin-bottom:0px;">
             {{user_profile.username}}
              <i class="fas fa-check-circle"></i>
         </h5>
 
-        <p class="card-text largeFont"><small class="text-muted">@{{user_profile.username}}</small></p>
+        <p class="card-text" style="font-size:large;"><small class="text-muted">@{{user_profile.username}}</small></p>
         <article>{{user_profile.bio}}!</article>
 
         <br>

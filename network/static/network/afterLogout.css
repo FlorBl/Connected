@@ -1,0 +1,111 @@
+.leftSpace{
+    margin-left: 7%;
+}
+
+.middleDiv{
+    margin-top:20px;
+    background-color:rgb(15,154,251);
+    height: 35%;
+}
+
+.infoDiv{
+    height: auto;
+    position: relative;
+}
+
+.infoDiv > div{
+    margin-left:3%;
+}
+.infoDiv > p{
+    position: absolute;
+    bottom: 0;
+}
+
+.singlePost{
+    border-bottom: 1px solid rgb(232,232,232);
+}
+
+#login, #register{
+    min-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#register{
+    background-color: white;
+    color:#00573F;
+}
+#register:hover{
+    background-color: white;
+    background-color:rgb(245,245,245);
+
+}
+
+#lightbox{
+    visibility:hidden;
+    border-radius: 20px;
+    color:white;
+    z-index:100;
+    height: fit-content;
+    width:40vw;
+    padding:20px;
+    background-color: white;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#lightbox h4{
+    color:black;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+#lightbox3{
+    visibility:hidden;
+    border-radius: 20px;
+    color:black;
+    z-index:100;
+    height: fit-content;
+    max-width:600px;
+    padding:50px 100px;
+    background-color: white;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.btnz{
+    color:rgb(56,56,56) !important;
+    background-color: white;
+    margin: 0 auto;
+    font-size: medium;
+
+}
+.btnz:hover{
+    background-color: #e8f5fd;
+    cursor: pointer;
+}
+
+.rightDiv{
+    background-color: 2px solid salmon;
+    display: grid;  
+    grid-template-columns: 30% 30% 30%;  
+    grid-template-rows: 120px 120px;
+    grid-gap: 1%;
+    margin-left: 7%;
+    margin-top: 40%;
+    border-radius:20px;
+}
+.rightDiv > div{
+    border:1px solid lightgray;
+    background-color: lightblue;
+
+}

@@ -1,38 +1,16 @@
-div.iconz{
-    display:table;
-    width:100%;
-}
-
-div.iconz div{
-    display:table-cell;
-    text-align:center;
-}
-
-
-
-/* index.html */
-#homeTitle{
-    height: 5%;
-    backdrop-filter: blur(16px);
-    z-index: 1000;
-    position:fixed;
-    padding:5px;
-    width:max-content;
-    display: block;
-
-}
-
 
 #globe2{
     visibility: hidden;
 
 }
-blue{
-    color:rgb(15,154,251);
-}
+
+/* Container of users posts */
 #separatortwo {
     margin-top: 130px;
+    border:1px solid red;
 }
+
+/* Icon form popup */
 #popPostForm{
         visibility:hidden;
     border-radius: 20px;
@@ -50,25 +28,15 @@ blue{
     transform: translate(-50%, -50%);
 }
 
-
+/* Pop up Profile Edit form */
 #profileEdit{
     height: 68vh;
     width: 90vw;
 }
-.cover{
-    position: relative;
-}
-.profile{
-    position: relative;
-}
-.centeredd{
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-}
+
 
 @media only screen and (max-width: 1420px) {
+
     .leftSide{
         width: 20%;
     }
@@ -80,6 +48,7 @@ blue{
 }
 
 @media only screen and (max-width: 1150px) {
+
 hide{
     visibility: hidden;
 }
@@ -111,74 +80,6 @@ hide{
 }
 }
 
-
-@media only screen and (max-width: 1005px) {
-    body{
-        width:100vw;
-    }
-
-
-    .ab{
-        visibility: hidden;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-
-    #leftWelcomeDiv{
-        visibility: hidden;
-        width: 0%;
-    }
-    #rightWelcomeDiv{
-        max-height: 100vh;
-
-    }
-
-    .rightDiv2{
-        visibility: hidden;
-        
-    }
-
-    .welcomeDiv{
-    width: 100vw;
-    display: grid;  
-    grid-template-columns: 9vw 90vw 1vw !important;  
-    grid-template-rows: 100vh;
-     overflow-x: hidden;
-}
-    
-
-}
-
-
-/*_______________________________________*/
-@media only screen and (max-width: 1175px){
-
-
-
-
-}
-
-
-
-@media only screen and (max-width: 575px){
-    #MainDivIndex{
-    width: 81vw;
-}
-
-}
-
-@media only screen and (max-width: 536px){
-.postIcons{
-    margin-right: 4% !important;
-}
-}
-
-@media only screen and (max-width: 517px){
-.postIcons{
-    margin-right: 2% !important;
-}
-}
 
 /* Index.html width < 1200px */
 @media only screen and (max-width: 1200px){
@@ -234,6 +135,113 @@ hide{
 }
 
 
+@media only screen and (max-width: 1005px) {
+    body{
+        width:100vw;
+    }
+
+
+    .ab{
+        visibility: hidden;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    /* Welcome.html */
+    #leftWelcomeDiv{
+        width: 55%;
+    }
+    #rightWelcomeDiv{
+        border:1px solid red;
+        max-height: 100vh;
+        width: auto;
+        margin-left: 30px;
+        padding-left: 20px;
+    }
+    #options i{
+        font-size: xx-large;
+    }
+    #options h1{
+        font-size: xx-large !important;
+    }
+    #options h2{
+        font-size: x-large !important;
+    }
+    #options h5{
+        font-size: large !important;
+    }
+    #first, #second{
+        font-size: medium;
+    }
+
+    /* layout.html */
+    .rightDiv2{
+        visibility: hidden;
+        
+    }
+    /* layout.html */
+    .welcomeDiv{
+    width: 100vw;
+    display: grid;  
+    grid-template-columns: 9vw 90vw 1vw !important;  
+    grid-template-rows: 100vh;
+     overflow-x: hidden;
+}
+    
+
+}
+
+
+
+@media only screen and (max-width: 575px){
+
+    .fa-globe-americas{
+        font-size: 40px;
+        margin-bottom: -20% !important;
+    }
+        #rightWelcomeDiv{
+        border:1px solid yellow;
+        max-height: 100vh;
+        margin-left: 30px;
+        max-width: 42%;
+
+    }
+    #first{
+        width: 40vw;
+    }
+
+    #MainDivIndex{
+    width: 81vw;
+}
+
+}
+
+@media only screen and (max-width: 536px){
+
+.postIcons{
+    margin-right: 4% !important;
+}
+}
+
+@media only screen and (max-width: 517px){
+     #leftWelcomeDiv{
+        width: 55%;
+     }
+    #first{
+        padding: 10px auto;
+    }
+.postIcons{
+    margin-right: 2% !important;
+}
+    #smallerPx{
+        width:80% !important;
+        align-content: center;
+    }
+    
+}
+
+
 
 /* Index.html width < 700px */
 @media only screen and (max-width: 700px){
@@ -279,7 +287,7 @@ overflow-x: hidden;
 
 
 
-
+    /* Makes Icons visible */
     .show{
         visibility: visible;
         font-size: 150%;
@@ -377,7 +385,7 @@ hide{
 .profile{
     position: relative;
 }
-.centeredd{
+.centered{
   top: 50%;
   left: 50%;
   position: absolute;

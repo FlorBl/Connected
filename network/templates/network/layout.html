@@ -12,6 +12,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="{% static 'network/styles.css' %}" rel="stylesheet">
     <link href="{% static 'network/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'network/layout.css' %}" rel="stylesheet">
+    <link href="{% static 'network/welcome.css' %}" rel="stylesheet">
+    <link href="{% static 'network/afterLogout.css' %}" rel="stylesheet">
+    <link href="{% static 'network/profile.css' %}" rel="stylesheet">
+
+
+
 
 </head>
 
@@ -24,21 +31,21 @@
         
                 <i id="globe" class="fas fa-globe-americas show"></i>
 
-             <h4><a class="nav-link" href="{% url 'notifications' %}"><i  class="show m far fa-bell fa-sm" ></i>{% block Notifs %}<hide>Notifications</hide>{% endblock %}</a></h4> 
+             <h4><a class="nav-link" href="{% url 'notifications' %}"><i  class="show m fa-solid fa-bell fa-sm" ></i>{% block Notifs %}<hide>Notifications</hide>{% endblock %}</a></h4> 
             
              <h4 ><a class="nav-link" href="{% url 'mobile' %}"><i  class="show m  fa-solid fa-people-group fa-sm"></i>{% block Sugges %}<hide>Suggestions</hide>{% endblock %}</a></h4>
              
-            <h4 ><a class="nav-link" href="{% url 'profile' user.username %}"><i style="color:rgb(60,64,68);" class="show m far fa-user fa-sm"></i>{% block Prof %}<hide>Profile</hide>{% endblock %}</a></h4>
+            <h4 ><a class="nav-link" href="{% url 'profile' user.username %}"><i class="show m fa-solid fa-user fa-sm"></i>{% block Prof %}<hide>Profile</hide>{% endblock %}</a></h4>
 
             <h4><a class="nav-link" href="{% url 'index' %}"><i  class="show m fas fa-light fa-home fa-sm"></i>{% block Home %}<hide>Home</hide>{% endblock %}</a></h4>
 
-            <h4><a class="nav-link" href="{% url 'logout' %}"><i class="show m fas fa-sign-out-alt fa-sm"></i>Log out</a></h4>
+            <h4><a class="nav-link" href="{% url 'logout' %}"><i class="show m fas fa-sign-out-alt fa-sm"></i><hide>Log out</hide></a></h4>
 
-            <h4 ><i onclick="postsForm();" style="color:rgb(60,64,68);" class="show m fas fa-paper-plane fa-sm ab" style="backgound-color:rgb(15,154,251);"></i><span class="underline"></span></h4>
+            <h4><i onclick="postsForm();" style="color:rgb(60,64,68);" class="show m fas fa-paper-plane fa-sm ab" style="backgound-color:rgb(15,154,251);"></i></h4>
             
 
             {% block postForm %}
-            <a onclick="postsForm();" class="postSide postButton" style="width:100%;height:100%;border-radius:40px;background-color:#498a70;color:whitesmoke;padding:10px 50px;outline:none;font-weight:700;font-size:large;">Post</a>
+            <a id="postSide" onclick="postsForm();" class="postButton" >Post</a>
             {% endblock %}
             <div class="prof" style="margin-right:50px;position:fixed;bottom:2%;">
             <img class="prof" style="position: absolute;top: margin:40px" class="picture show" src="{{ username.profile_image.url }}">
@@ -256,12 +263,12 @@
                 <form id="formID" action="{% url 'updateInfo' %}" method="post" class="card-body" enctype="multipart/form-data">
                  {% csrf_token %}
                 <img id="previewCover" onclick="document.getElementById('imagePreview2').click()" src="{{ user_profile.cover_image.url }}" />
-                <i onclick="document.getElementById('file-uploadC').click()" class="fas fa-camera centeredd" style="font-size:large;padding:10px;border-radius:50px;background-color:rgb(56,45,39);color:rgb(188,182,180);">
+                <i onclick="document.getElementById('file-uploadC').click()" class="fas fa-camera centered" style="">
                 </i>
             </div>
 
             <div class="profile">
-                    <i  onclick="document.getElementById('file-uploadB').click()" class="fas fa-camera centeredd" style="font-size:large;padding:10px;border-radius:50px;background-color:rgb(56,45,39);color:rgb(188,182,180);">
+                    <i  onclick="document.getElementById('file-uploadB').click()" class="fas fa-camera centered">
                 </i>
                     <img id="previewProfile" onclick="document.getElementById('imagePreview').click();" src="{{ user_profile.profile_image.url }}">
             </div>  
@@ -296,7 +303,7 @@
 onchange="document.getElementById('previewCover').src = window.URL.createObjectURL(this.files[0])">
         </div>
 
-        <input onclick="clickThis();" id="saveButton" class="welcomeBtn btnA" type="submit" value="Save" style="background-color:rgb(15,20,25);margin:15px;">
+        <input onclick="clickThis();" id="saveButton" class="welcomeBtn btnA" type="submit" value="Save">
 
     </form>
 </div>
