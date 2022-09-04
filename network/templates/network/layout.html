@@ -29,7 +29,7 @@
     <article class="leftSide smallerWidth">
         {% if user.is_authenticated %}
         
-                <i id="globe" class="fas fa-globe-americas show"></i>
+            <i id="globe" class="fas fa-globe-americas show"></i>
 
              <h4><a class="nav-link" href="{% url 'notifications' %}"><i  class="show m fa-solid fa-bell fa-sm" ></i>{% block Notifs %}<hide>Notifications</hide>{% endblock %}</a></h4> 
             
@@ -41,11 +41,11 @@
 
             <h4><a class="nav-link" href="{% url 'logout' %}"><i class="show m fas fa-sign-out-alt fa-sm"></i><hide>Log out</hide></a></h4>
 
-            <h4><i onclick="postsForm();" style="color:rgb(60,64,68);" class="show m fas fa-paper-plane fa-sm ab" style="backgound-color:rgb(15,154,251);"></i></h4>
+            <h4><i onclick="postsForm();" class="show m fas fa-paper-plane fa-sm"></i></h4>
             
 
             {% block postForm %}
-            <a id="postSide" onclick="postsForm();" class="postButton" >Post</a>
+            <hide><a id="postSide" onclick="postsForm();" class="postButton" >Post</a></hide>
             {% endblock %}
             <div class="prof" style="margin-right:50px;position:fixed;bottom:2%;">
             <img class="prof" style="position: absolute;top: margin:40px" class="picture show" src="{{ username.profile_image.url }}">

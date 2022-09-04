@@ -85,5 +85,12 @@
     </div>
 </div>
 
+<script>
+document.addEventListener('mouseover', function(){
+    var parent = document.getElementById('MainDivIndex');
+    document.getElementById("homeTitle").style.width = parent.offsetWidth + 'px';
+})
+</script>
+
 {% load static %}
 {% endblock %}

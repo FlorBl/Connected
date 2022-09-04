@@ -7,7 +7,6 @@
 /* Container of users posts */
 #separatortwo {
     margin-top: 130px;
-    border:1px solid red;
 }
 
 /* Icon form popup */
@@ -47,6 +46,23 @@
     
 }
 
+/* Index.html width < 1200px */
+@media only screen and (max-width: 1200px){
+    .welcomeDiv{
+    width: 100vw;
+    display: grid;  
+    grid-template-columns: 20vw 45vw 35vw;  
+    grid-template-rows: 100vh;
+     overflow-x: hidden;
+}
+
+.firstDiv{
+    margin-left: 2vw;
+}
+
+
+}
+
 @media only screen and (max-width: 1150px) {
 
 hide{
@@ -81,23 +97,6 @@ hide{
 }
 
 
-/* Index.html width < 1200px */
-@media only screen and (max-width: 1200px){
-    .welcomeDiv{
-    width: 100vw;
-    display: grid;  
-    grid-template-columns: 20vw 45vw 35vw;  
-    grid-template-rows: 100vh;
-     overflow-x: hidden;
-}
-
-.firstDiv{
-    margin-left: 2vw;
-}
-
-
-}
-
 /* Hide plane icon after 1150 */
 @media only screen and (min-width: 1150px){
 .fa-paper-plane{
@@ -107,7 +106,11 @@ hide{
 }
 
 
-
+@media only screen and (max-width: 1005px) {
+    body{
+        width:100vw;
+    }
+}
 
 /* Index.html width < 1000px */
 @media only screen and (max-width: 1000px){
@@ -135,17 +138,6 @@ hide{
 }
 
 
-@media only screen and (max-width: 1005px) {
-    body{
-        width:100vw;
-    }
-
-
-    .ab{
-        visibility: hidden;
-    }
-}
-
 @media only screen and (max-width: 800px) {
 
     /* Welcome.html */
@@ -153,7 +145,6 @@ hide{
         width: 55%;
     }
     #rightWelcomeDiv{
-        border:1px solid red;
         max-height: 100vh;
         width: auto;
         margin-left: 30px;
@@ -193,59 +184,8 @@ hide{
 }
 
 
-
-@media only screen and (max-width: 575px){
-
-    .fa-globe-americas{
-        font-size: 40px;
-        margin-bottom: -20% !important;
-    }
-        #rightWelcomeDiv{
-        border:1px solid yellow;
-        max-height: 100vh;
-        margin-left: 30px;
-        max-width: 42%;
-
-    }
-    #first{
-        width: 40vw;
-    }
-
-    #MainDivIndex{
-    width: 81vw;
-}
-
-}
-
-@media only screen and (max-width: 536px){
-
-.postIcons{
-    margin-right: 4% !important;
-}
-}
-
-@media only screen and (max-width: 517px){
-     #leftWelcomeDiv{
-        width: 55%;
-     }
-    #first{
-        padding: 10px auto;
-    }
-.postIcons{
-    margin-right: 2% !important;
-}
-    #smallerPx{
-        width:80% !important;
-        align-content: center;
-    }
-    
-}
-
-
-
-/* Index.html width < 700px */
 @media only screen and (max-width: 700px){
-
+/* Index.html */
 body,html{
 overflow-x: hidden;
 }
@@ -264,7 +204,12 @@ overflow-x: hidden;
     grid-template-rows: 100vh;
      overflow-x: hidden;
 }
+.welcomeDiv > div{
+border-right: none;
+margin-left: 0;
 
+}
+/* welcome.html */
 #options h1{
     visibility: hidden;
     margin-bottom: 0px;
@@ -279,30 +224,24 @@ overflow-x: hidden;
     margin-bottom: 10px;
 
 }
+#MainDivIndex{
+    margin-left: 3%;
+    border-left: 1px solid lightgray;
+}
 
-
+/* layout.html */
 .postIcons{
     margin-right: 1% !important;
 }
-
-
-
-    /* Makes Icons visible */
-    .show{
-        visibility: visible;
-        font-size: 150%;
-        color:rgb(60,64,68);
-        left:0% !important;
-    }
-    #MainDivIndex{
-        margin-left: 3%;
-        border-left: 1px solid lightgray;
-    }
-    .welcomeDiv > div{
-   border-right: none;
-   margin-left: 0;
-
+/* Makes Icons visible */       
+.show{
+    visibility: visible;
+    font-size: 150%;
+    color:rgb(60,64,68);
+    left:0% !important;
 }
+
+
 .postButton{
     visibility: hidden;
 }
@@ -394,10 +333,62 @@ hide{
 }
 
 
+@media only screen and (max-width: 575px){
+    /* Welcome.html */
+    .fa-globe-americas{
+        font-size: 40px;
+        margin-bottom: -20% !important;
+    }
+        #rightWelcomeDiv{
+        max-height: 100vh;
+        margin-left: 30px;
+        max-width: 42%;
+
+    }
+    #first{
+        width: 40vw;
+    }
+    /* layout.html */
+    #MainDivIndex{
+    width: 81vw;
+}
+
+}
+
+@media only screen and (max-width: 536px){
+
+.postIcons{
+    margin-right: 4% !important;
+}
+}
+
+
+@media only screen and (max-width: 517px){
+    /* Welcome.html */
+     #leftWelcomeDiv{
+        width: 55%;
+     }
+    #first{
+        padding: 10px auto;
+    }
+    #smallerPx{
+        width:80% !important;
+        align-content: center;
+    }
+    /* layout.html */
+    .postIcons{
+    margin-right: 2% !important;
+    }
+    
+}
 
 @media only screen and (max-width: 450px){
+/* welcome.html */
+#options{
+    padding:0;
+    margin-left:-15%;
 
-
+}
 #options h1{
     visibility: hidden;
     margin-bottom: 0px;
@@ -414,8 +405,8 @@ hide{
 .smallerPX{
     text-align:center;
     max-width:90% !important;
+    font-size:x-small !important;
 }
-
 .welcomeBtn{
     font-size:medium;
     text-align: center;
@@ -434,4 +425,18 @@ hide{
     margin-bottom: 0px;
 
 }
+}
+
+@media only screen and (max-width: 450px){
+
+ ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+    .leftSide{
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
 }
