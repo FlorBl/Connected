@@ -1,3 +1,6 @@
+body{
+    height: 100vh;
+}
 
 #globe2{
     visibility: hidden;
@@ -115,9 +118,7 @@ hide{
 /* Index.html width < 1000px */
 @media only screen and (max-width: 1000px){
 
-.searchArticle{
-    visibility: hidden;
-}
+
 .welcomeDiv{
     width: 100vw;
     display: grid;  
@@ -395,7 +396,7 @@ hide{
 
 }
 #options h2{
-    border:1px solid white;
+    border:1px solid whitesmoke;
     font-weight: bolder;
     margin-top: -50px;
     font-size: 24px;

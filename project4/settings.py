@@ -15,6 +15,10 @@ import django_on_heroku
 import dj_database_url
 from decouple import config
 
+import environ
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -23,13 +27,12 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '13kl@xtukpwe&xj2xoysxe9_6=tf@f8ewxer5n&ifnd46+6$%8'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['velvet-rain.herokuapp.com',
-                  '127.0.0.1']
+ALLOWED_HOSTS = ['velvet-rain.herokuapp.com']
 
 
 # Application definition
@@ -145,7 +148,6 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # until here
 django_on_heroku.settings(locals(), staticfiles=False)
-
 AWS_S3_HOST = 's3.ca-central-1.amazonaws.com'
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_ACCESS_KEY')

@@ -84,7 +84,7 @@ userInput.onkeydown = function(){
         <a href="profile/${addUser.user}">
         <div class="demo" onmouseover="this.style.backgroundColor='#f7f9f9'" onmouseout="this.style.backgroundColor=''">
                         <span><img class="suggestionPic"  src="${profileImage}"></span>
-                        <span class="middle"><strong>${addUser.user}</strong><br> <p style="padding-left:8px;">@${addUser.user}</p></span>s
+                        <span class="middle"><strong>${addUser.user}</strong><br> <p style="padding-left:8px;">@${addUser.user}</p></span>
                         <span>
                             <button class="btnS" onclick="callThis();" id="btnSuggestions" data-id="${addUser.id}" type="button"  style="background-color:rgb(15,20,25);float:right;color:whitesmoke;font-weight:bold;padding:3px 15px;border-radius:50px;">Follow</button>
                             
